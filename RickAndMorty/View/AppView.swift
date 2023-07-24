@@ -10,30 +10,33 @@ import SwiftUI
 struct AppView: View {
     //MARK: - PROPERTIES
     
+  
+    
     //MARK: - BODY
     var body: some View {
         TabView {
             AboutView()
-                .tabItem({
-                    Image(systemName:"ellipsis.viewfinder")
+                .tabItem{
+                    Image(systemName:"square.grid.2x2")
                     Text(String(localized: "About"))
-                })
+                        
+                }
             ContentView()
-                .tabItem({
-                    Image(systemName:"ellipsis.viewfinder")
+                .tabItem {
+                    Image(systemName:"puzzlepiece.extension")
                     Text(String(localized: "Episodes"))
-                })
+                }
             AliveCharactersView()
-                .tabItem({
-                    Image(systemName:"ellipsis.viewfinder")
+                .tabItem {
+                    Image(systemName:"ellipsis.curlybraces")
                     Text(String(localized: "Alive"))
-                })
+                }
             DeadCharactersView()
-                .tabItem({
+                .tabItem {
                     Image(systemName:"ellipsis.viewfinder")
                     Text(String(localized: "Dead"))
-                })
-        }
+                }
+        } // TAB
         .accentColor(Color.primary)
     }
 }

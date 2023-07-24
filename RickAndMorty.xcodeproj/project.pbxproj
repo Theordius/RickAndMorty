@@ -16,6 +16,13 @@
 		100D8DB42A6E819100E38839 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DB32A6E819100E38839 /* EpisodesView.swift */; };
 		100D8DB62A6E81A400E38839 /* AliveCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DB52A6E81A400E38839 /* AliveCharactersView.swift */; };
 		100D8DB82A6E81B900E38839 /* DeadCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DB72A6E81B900E38839 /* DeadCharactersView.swift */; };
+		100D8DBC2A6E883A00E38839 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DBB2A6E883A00E38839 /* ImageLoader.swift */; };
+		100D8DBE2A6E8FD400E38839 /* DataManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DBD2A6E8FD400E38839 /* DataManagable.swift */; };
+		100D8DC02A6E9BDD00E38839 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DBF2A6E9BDD00E38839 /* ColorExtension.swift */; };
+		100D8DC42A6E9CE400E38839 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DC32A6E9CE400E38839 /* DataModel.swift */; };
+		100D8DC72A6E9E7500E38839 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DC62A6E9E7500E38839 /* CustomBackgroundView.swift */; };
+		100D8DC92A6E9E9E00E38839 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DC82A6E9E9E00E38839 /* CardView.swift */; };
+		100D8DCB2A6E9ED100E38839 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D8DCA2A6E9ED100E38839 /* CustomButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		100D8DB32A6E819100E38839 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
 		100D8DB52A6E81A400E38839 /* AliveCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliveCharactersView.swift; sourceTree = "<group>"; };
 		100D8DB72A6E81B900E38839 /* DeadCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadCharactersView.swift; sourceTree = "<group>"; };
+		100D8DBB2A6E883A00E38839 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		100D8DBD2A6E8FD400E38839 /* DataManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagable.swift; sourceTree = "<group>"; };
+		100D8DBF2A6E9BDD00E38839 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		100D8DC32A6E9CE400E38839 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		100D8DC62A6E9E7500E38839 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
+		100D8DC82A6E9E9E00E38839 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		100D8DCA2A6E9ED100E38839 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +75,12 @@
 		100D8D9D2A6E796500E38839 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				100D8DC52A6E9E5F00E38839 /* Components */,
 				100D8DAC2A6E7C6E00E38839 /* View */,
 				100D8DAD2A6E7C7800E38839 /* Model */,
 				100D8DAE2A6E7C8400E38839 /* Data */,
 				100D8DB92A6E84E500E38839 /* Networking */,
+				100D8DBA2A6E880600E38839 /* Utils */,
 				100D8DA22A6E796700E38839 /* Assets.xcassets */,
 				100D8DA42A6E796700E38839 /* Preview Content */,
 			);
@@ -96,6 +112,7 @@
 		100D8DAD2A6E7C7800E38839 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				100D8DC32A6E9CE400E38839 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,8 +127,28 @@
 		100D8DB92A6E84E500E38839 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				100D8DBD2A6E8FD400E38839 /* DataManagable.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		100D8DBA2A6E880600E38839 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				100D8DBB2A6E883A00E38839 /* ImageLoader.swift */,
+				100D8DBF2A6E9BDD00E38839 /* ColorExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		100D8DC52A6E9E5F00E38839 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				100D8DC62A6E9E7500E38839 /* CustomBackgroundView.swift */,
+				100D8DC82A6E9E9E00E38839 /* CardView.swift */,
+				100D8DCA2A6E9ED100E38839 /* CustomButtonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +223,18 @@
 			files = (
 				100D8DB22A6E817B00E38839 /* AboutView.swift in Sources */,
 				100D8DA12A6E796500E38839 /* ContentView.swift in Sources */,
+				100D8DC42A6E9CE400E38839 /* DataModel.swift in Sources */,
+				100D8DC72A6E9E7500E38839 /* CustomBackgroundView.swift in Sources */,
 				100D8D9F2A6E796500E38839 /* RickAndMortyApp.swift in Sources */,
 				100D8DB82A6E81B900E38839 /* DeadCharactersView.swift in Sources */,
 				100D8DB02A6E801700E38839 /* AppView.swift in Sources */,
+				100D8DCB2A6E9ED100E38839 /* CustomButtonView.swift in Sources */,
+				100D8DC92A6E9E9E00E38839 /* CardView.swift in Sources */,
 				100D8DB62A6E81A400E38839 /* AliveCharactersView.swift in Sources */,
+				100D8DBC2A6E883A00E38839 /* ImageLoader.swift in Sources */,
+				100D8DBE2A6E8FD400E38839 /* DataManagable.swift in Sources */,
 				100D8DB42A6E819100E38839 /* EpisodesView.swift in Sources */,
+				100D8DC02A6E9BDD00E38839 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
