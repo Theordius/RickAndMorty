@@ -15,9 +15,7 @@ struct Character: Decodable, Identifiable {
         case species
         case gender
         case image
-       // case episode
-       // case url
-       // case created
+   
     }
     
     let id: Int
@@ -26,9 +24,6 @@ struct Character: Decodable, Identifiable {
     let species: String
     let gender: String
     let image: URL?
-   // let episode: [URL]
-  //  let url: URL
-    //let created: Date
 }
 
 

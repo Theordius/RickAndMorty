@@ -27,20 +27,14 @@ struct AboutView: View {
             
             VStack {
                 Text("Rick & Morty".uppercased())
-                    .font(.system(size: 42, weight: .bold, design: .serif))
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .shadow(color: Color.customBlackTransparentDark, radius: 4, x: 0, y: 4)
+                    .modifier(BoldTextModifier())
                 
                 Text("""
 Welcome to the Rick & Morty App, created for all of you who wants to know more about this awesome series!
 """)
-                .lineLimit(nil)
-                .font(.system(.headline, design: .serif))
+                .modifier(HeadlineTextModifier())
                 .foregroundColor(Color.customGreenLight)
-                .multilineTextAlignment(.center)
-                .lineSpacing(8)
-                .frame(maxWidth: 640, minHeight: 120)
+             
             }
             .padding()
             Spacer()

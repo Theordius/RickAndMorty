@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CharacterCardView: View {
     //MARK: - PROPERTIES
     @StateObject var viewModel = ViewModel()
+    let haptics = UIImpactFeedbackGenerator(style: .medium)
     let description = String(localized: "Some kind of character description if api has provide it..." )
     
     //MARK: - BODY
@@ -60,10 +59,10 @@ struct CharacterCardView: View {
                                                endPoint: .bottomTrailing
                                 )
                             )
-                            .frame(width: 256, height: 256)
+                            .frame(width: 240, height: 240)
                         ImageLoader(url: characterImageURL)
                             .scaledToFit()
-                            .frame(width: 240, height: 240)
+                            .frame(width: 220, height: 220)
                             .clipShape(Circle())
                     }
                 } else {
@@ -73,7 +72,7 @@ struct CharacterCardView: View {
                 }
               
                 Button {
-                    // ACTION: Show a Sheet
+                    haptics.impactOccurred()
                 } label: {
                     CustomButtonView()
                 }
@@ -84,6 +83,13 @@ struct CharacterCardView: View {
         .onAppear {
             viewModel.fetchCharacters()
         }
+    }
+}
+
+//MARK: - PREVIEW
+struct CharacterCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CharacterCardView()
     }
 }
 

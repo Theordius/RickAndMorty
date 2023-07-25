@@ -7,26 +7,51 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct EpisodeDetailView: View {
+    //MARK: - PROPERTIES
     var episode: Episode
+    let screenSize = UIScreen.main.bounds.size
     
+    //MARK: - BODY
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(episode.name)
-                .font(.headline)
-            Text("Air Date: \(episode.airDate)")
-            Text("Episode Code: \(episode.episode)")
+        VStack(alignment: .center, spacing: 16) {
+            Spacer()
+            Text(episode.name.uppercased())
+                .modifier(BoldTextModifier())
+            
+            Text("Some kind of summary of the episode if provided by API")
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+            
+            VStack(alignment: .center, spacing: 8) {
+                Text("Date Created: \(episode.created)")
+                Text("Air Date: \(episode.airDate)")
+                Divider().padding(.horizontal, 6)
+                Text("Episode Code: \(episode.episode)")
+               
+            }
+            .modifier(HeadlineTextModifier())
+            .foregroundColor(.white)
+            
+            
+            Spacer()
         }
-        .padding()
+        .background(
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: screenSize.width, height: screenSize.height)
+        )
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 //MARK: - PREVIEW
 struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        // Create a sample Episode object for preview
-        let sampleData = Episode(id: 1, name: "Pilot", airDate: "January 1, 2023", episode: "S01E01", characters: [], url: URL(string: "https://rickandmortyapi.com/api/episode/1")!, created: "Jaunuary 1")
-        EpisodeDetailView(episode: sampleData)
+        EpisodeDetailView(episode: SampleData.episodeExample)
     }
 }
 
