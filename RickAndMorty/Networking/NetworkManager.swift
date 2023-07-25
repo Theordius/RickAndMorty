@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DataManagable {
-    func fetchData(from api: String, completion: @escaping (Result<Results, NetworkError>) -> Void)
+    func fetchData<T: Decodable>(from api: String, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
 enum NetworkError: Error {
@@ -16,10 +16,8 @@ enum NetworkError: Error {
     case decodingError
 }
 
-class NetworkManager: DataManagable, ObservableObject {
-    @Published var episodes: [Episode] = []
-
-    func fetchData(from api: String, completion: @escaping (Result<Results, NetworkError>) -> Void) {
+class NetworkManager {
+    func fetchData<T: Decodable>(from api: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
         if let url = URL(string: api) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -29,8 +27,8 @@ class NetworkManager: DataManagable, ObservableObject {
                         return
                     }
                     do {
-                        let results = try JSONDecoder().decode(Results.self, from: data)
-                        completion(.success(results))
+                        let decodedData = try JSONDecoder().decode(T.self, from: data)
+                        completion(.success(decodedData))
                     } catch {
                         completion(.failure(.decodingError))
                     }
@@ -40,4 +38,5 @@ class NetworkManager: DataManagable, ObservableObject {
         }
     }
 }
+
 

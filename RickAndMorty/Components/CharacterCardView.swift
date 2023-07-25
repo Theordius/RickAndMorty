@@ -7,12 +7,12 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CharacterCardView: View {
     //MARK: - PROPERTIES
-   
-    let name: String = "Rick Sanchez"
-    let description: String = "some kind of information about this character"
-    let imageURL = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...5)).jpeg")
+    @StateObject var viewModel = ViewModel()
+    let description = String(localized: "Some kind of character description if api has provide it..." )
     
     //MARK: - BODY
     var body: some View {
@@ -22,13 +22,24 @@ struct CharacterCardView: View {
             VStack {
                 //MARK: - HEADER
                 VStack(alignment: .leading) {
-                    Text(name)
-                        .modifier(HeaderTextModifier())
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [.customGrayLight, .customGrayMedium],
-                                startPoint: .top, endPoint: .bottom)
-                        )
+                    if let characterName = viewModel.characters.first?.name {
+                        Text(characterName)
+                            .modifier(HeaderTextModifier())
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [.customGrayLight, .customGrayMedium],
+                                    startPoint: .top, endPoint: .bottom)
+                            )
+                    } else {
+                        Text("Loading...")
+                            .modifier(HeaderTextModifier())
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [.customGrayLight, .customGrayMedium],
+                                    startPoint: .top, endPoint: .bottom)
+                            )
+                    }
+                    
                     Divider().padding(.horizontal)
                     Text(description)
                         .modifier(DescriptionTextModifier())
@@ -37,23 +48,28 @@ struct CharacterCardView: View {
                 .padding(.horizontal, 30)
                 
                 //MARK: - MAIN CONTENT
-                ZStack {
-                    Circle()
-                        .fill(
-                            LinearGradient(colors: [
-                                Color.customIndigoMedium,
-                                Color.customSalmonLight
-                            ],
-                                           startPoint: .topLeading,
-                                           endPoint: .bottomTrailing
-                                          )
-                        )
+                if let characterImageURL = viewModel.characters.first?.image {
+                    ZStack {
+                        Circle()
+                            .fill(
+                                LinearGradient(colors: [
+                                    Color.customIndigoMedium,
+                                    Color.customSalmonLight
+                                ],
+                                               startPoint: .topLeading,
+                                               endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 256, height: 256)
+                        ImageLoader(url: characterImageURL)
+                            .scaledToFit()
+                            .frame(width: 240, height: 240)
+                            .clipShape(Circle())
+                    }
+                } else {
+                    Color.clear
                         .frame(width: 256, height: 256)
-                    URLImage(url: imageURL!)
-                        .scaledToFit()
-                        .frame(width: 240, height: 240)
-                        .clipShape(Circle())
-                    
+                        .overlay(Text("Loading Image...").foregroundColor(.white))
                 }
               
                 Button {
@@ -65,14 +81,9 @@ struct CharacterCardView: View {
             }
         } //: CARD
         .frame(width: 320, height: 570)
+        .onAppear {
+            viewModel.fetchCharacters()
+        }
     }
-     
-    
 }
 
-//MARK: - PREVIEW
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterCardView()
-    }
-}

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AliveCharactersView: View {
     //MARK: - PROPERTIES
+
     
     //MARK: - BODY
     var body: some View {

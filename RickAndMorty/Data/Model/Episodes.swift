@@ -26,10 +26,5 @@ struct Episode: Decodable, Identifiable {
     let characters: [URL]
     let url: URL
     let created: String
-    
-  
-}
 
-struct Results: Decodable {
-    let results: [Episode]
 }

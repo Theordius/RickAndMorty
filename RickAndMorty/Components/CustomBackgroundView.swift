@@ -36,7 +36,7 @@ struct CustomBackgroundView: View {
             Image("background")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: screenSize.width, height: screenSize.height) // Fill the whole screen
+                .frame(width: screenSize.width, height: screenSize.height) 
         )
         .edgesIgnoringSafeArea(.all)
     }

@@ -8,7 +8,7 @@
 /// Async image loader for the purposes of the app
 import SwiftUI
 
-struct URLImage: View {
+struct ImageLoader: View {
     let url: URL
     
     var body: some View {

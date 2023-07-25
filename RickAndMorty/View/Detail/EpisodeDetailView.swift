@@ -14,8 +14,8 @@ struct EpisodeDetailView: View {
         VStack(alignment: .leading) {
             Text(episode.name)
                 .font(.headline)
-            Text("Air Date: ...")
-            Text("Episode Code:...")
+            Text("Air Date: \(episode.airDate)")
+            Text("Episode Code: \(episode.episode)")
         }
         .padding()
     }
@@ -25,8 +25,8 @@ struct EpisodeDetailView: View {
 struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample Episode object for preview
-        let sampleData = Episode(id: 1, name: "Sample Episode", airDate: "January 1, 2023", episode: "S01E01", characters: [], url: URL(string: "https://rickandmortyapi.com/api/episode/1")!, created: "Jaunuary 1")
-
+        let sampleData = Episode(id: 1, name: "Pilot", airDate: "January 1, 2023", episode: "S01E01", characters: [], url: URL(string: "https://rickandmortyapi.com/api/episode/1")!, created: "Jaunuary 1")
         EpisodeDetailView(episode: sampleData)
     }
 }
+

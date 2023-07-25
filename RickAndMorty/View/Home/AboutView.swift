@@ -17,7 +17,7 @@ struct AboutView: View {
     var body: some View {
         VStack {
             Spacer()
-            URLImage(url: imageURL!)
+            ImageLoader(url: imageURL!)
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
                 .frame(width: 240, height: 240, alignment: .center)

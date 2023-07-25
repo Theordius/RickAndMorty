@@ -7,24 +7,29 @@
 
 import Foundation
 
-struct Location: Codable {
-    let name: String
-    let url: URL
-}
-
-struct Character: Codable, Identifiable {
+struct Character: Decodable, Identifiable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case status
+        case species
+        case gender
+        case image
+       // case episode
+       // case url
+       // case created
+    }
+    
     let id: Int
     let name: String
     let status: String
     let species: String
-    let type: String
     let gender: String
-    let origin: Location
-    let location: Location
-    let image: URL
-    let episode: [URL]
-    let url: URL
-    let created: Date
+    let image: URL?
+   // let episode: [URL]
+  //  let url: URL
+    //let created: Date
 }
+
 
 

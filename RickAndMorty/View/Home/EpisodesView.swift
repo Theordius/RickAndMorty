@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct EpisodesView: View {
-    @ObservedObject var networkManager = NetworkManager()
-    let api: String = "https://rickandmortyapi.com/api/episode"
-
+    @StateObject var viewModel = ViewModel()
+  
     var body: some View {
         NavigationView {
-            List(networkManager.episodes) { episode in
+            List(viewModel.episodes) { episode in
                 NavigationLink(destination: EpisodeDetailView(episode: episode)) {
                     Text(episode.name)
                 }
@@ -21,16 +20,7 @@ struct EpisodesView: View {
             .navigationTitle("Episodes")
         }
         .onAppear {
-            networkManager.fetchData(from: api) { result in
-                switch result {
-                case .success(let results):
-                    DispatchQueue.main.async {
-                        self.networkManager.episodes = results.results
-                    }
-                case .failure(let error):
-                    print("Error fetching episodes: \(error)")
-                }
-            }
+            viewModel.fetchEpisodes()
         }
     }
 }
