@@ -11,6 +11,14 @@ import SwiftUI
     @Published private(set) var episodes = [Episode]()
     @Published private(set) var characters = [Character]()
     
+    var aliveCharacters: [Character] {
+           characters.filter { $0.status == "Alive" }
+       }
+    
+    var deadCharacters: [Character] {
+           characters.filter { $0.status == "Dead" }
+       }
+    
     private let networkManager = NetworkManager()
     
     func fetchEpisodes() {

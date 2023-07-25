@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomBackgroundView: View {
     var body: some View {
-        let screenSize = UIScreen.main.bounds.size
         ZStack {
             // MARK: - 3. DEPTH
             Color.customGreenDark
@@ -32,13 +31,6 @@ struct CustomBackgroundView: View {
             )
             .cornerRadius(40)
         }
-        .background(
-            Image("background")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: screenSize.width, height: screenSize.height) 
-        )
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

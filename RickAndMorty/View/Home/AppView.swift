@@ -9,48 +9,47 @@ import SwiftUI
 
 struct AppView: View {
     //MARK: - PROPERTIES
-    
-  
+    let tabBarAppearance = UITabBarAppearance()
     
     //MARK: - BODY
     var body: some View {
-        TabView {
-            AboutView()
-                .tabItem{
-                    Image(systemName:"square.grid.2x2")
-                    Text(String(localized: "About"))
+        ZStack {
+            TabView {
+                AboutView()
+                    .tabItem{
+                        Image(systemName:"square.grid.2x2")
+                        Text(String(localized: "About"))
                         
-                }
-            ContentView()
-                .tabItem {
-                    Image(systemName:"list.star")
-                    Text(String(localized: "Episodes"))
-                }
-            AliveCharactersView()
-                .tabItem {
-                    Image(systemName:"heart.fill")
-                    Text(String(localized: "Alive"))
-                }
-            DeadCharactersView()
-                .tabItem {
-                    Image(systemName:"heart.slash.fill")
-                    Text(String(localized: "Dead"))
-                        .foregroundColor(Color.white)
-                }
+                    }
+                ContentView()
+                    .tabItem {
+                        Image(systemName:"list.star")
+                        Text(String(localized: "Episodes"))
+                    }
+                AliveCharactersView(characters: [SampleData.characterExample, SampleData.characterExample])
+                    .tabItem {
+                        Image(systemName:"heart.fill")
+                        Text(String(localized: "Alive"))
+                    }
+                DeadCharactersView(characters: [SampleData.characterExample, SampleData.characterExample])
+                    .tabItem {
+                        Image(systemName:"heart.slash.fill")
+                        Text(String(localized: "Dead"))
+                            .foregroundColor(Color.white)
+                    }
+            }
         } // TAB
         .accentColor(Color.yellow)
-      
+        
         .onAppear {
-                  let tabBarAppearance = UITabBarAppearance()
-                  tabBarAppearance.configureWithOpaqueBackground()
-                  tabBarAppearance.backgroundColor = UIColor.white
+            tabBarAppearance.configureWithOpaqueBackground()
+            tabBarAppearance.backgroundColor = UIColor.white
+            tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.black
+            tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.yellow
             
-                  tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.black
-                  tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.black
-                  
-                  UITabBar.appearance().standardAppearance = tabBarAppearance
-              }
-      
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+        }
+        
     }
 }
 

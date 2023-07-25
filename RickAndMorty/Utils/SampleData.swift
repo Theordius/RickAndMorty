@@ -23,7 +23,8 @@ struct SampleData {
     )
 
     static let characterExample = Character(
-        id: 1, name: "Rick Sanchez",
+        id: 1,
+        name: "Rick Sanchez",
         status: "Alive",
         species: "Human",
         gender: "Male",

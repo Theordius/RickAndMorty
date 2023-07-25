@@ -11,13 +11,12 @@ struct EpisodesView: View {
     @StateObject var viewModel = ViewModel()
   
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(viewModel.episodes) { episode in
                 NavigationLink(destination: EpisodeDetailView(episode: episode)) {
                     Text(episode.name)
                 }
             }
-            .navigationTitle("Episodes")
         }
         .onAppear {
             viewModel.fetchEpisodes()

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Episode: Decodable, Identifiable {
+struct Episode: Hashable, Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
