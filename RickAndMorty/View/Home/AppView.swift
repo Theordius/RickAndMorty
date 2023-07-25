@@ -23,21 +23,34 @@ struct AppView: View {
                 }
             ContentView()
                 .tabItem {
-                    Image(systemName:"puzzlepiece.extension")
+                    Image(systemName:"list.star")
                     Text(String(localized: "Episodes"))
                 }
             AliveCharactersView()
                 .tabItem {
-                    Image(systemName:"ellipsis.curlybraces")
+                    Image(systemName:"heart.fill")
                     Text(String(localized: "Alive"))
                 }
             DeadCharactersView()
                 .tabItem {
-                    Image(systemName:"ellipsis.viewfinder")
+                    Image(systemName:"heart.slash.fill")
                     Text(String(localized: "Dead"))
+                        .foregroundColor(Color.white)
                 }
         } // TAB
-        .accentColor(Color.primary)
+        .accentColor(Color.yellow)
+      
+        .onAppear {
+                  let tabBarAppearance = UITabBarAppearance()
+                  tabBarAppearance.configureWithOpaqueBackground()
+                  tabBarAppearance.backgroundColor = UIColor.white
+            
+                  tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.black
+                  tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.black
+                  
+                  UITabBar.appearance().standardAppearance = tabBarAppearance
+              }
+      
     }
 }
 

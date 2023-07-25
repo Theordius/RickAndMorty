@@ -12,7 +12,7 @@ struct DeadCharactersView: View {
     
     //MARK: - BODY
     var body: some View {
-        CardView()
+        CharacterCardView()
     }
 }
 

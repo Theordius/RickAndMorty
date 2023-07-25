@@ -7,16 +7,11 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CustomBackgroundView: View {
-    //MARK: - PROPERTIES
-    
-    //MARK: - BODY
     var body: some View {
+        let screenSize = UIScreen.main.bounds.size
         ZStack {
             // MARK: - 3. DEPTH
-            
             Color.customGreenDark
                 .cornerRadius(40)
                 .offset(y: 12)
@@ -32,13 +27,21 @@ struct CustomBackgroundView: View {
             LinearGradient(colors: [
                 Color.customGreenLight,
                 Color.customGreenMedium],
-               startPoint: .top,
-               endPoint: .bottom
+                startPoint: .top,
+                endPoint: .bottom
             )
             .cornerRadius(40)
         }
+        .background(
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: screenSize.width, height: screenSize.height) // Fill the whole screen
+        )
+        .edgesIgnoringSafeArea(.all)
     }
 }
+
 
 //MARK: - PREVIEW
 struct CustomBackgroundView_Previews: PreviewProvider {

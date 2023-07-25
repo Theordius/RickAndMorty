@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct CharacterCardView: View {
     //MARK: - PROPERTIES
+   
     let name: String = "Rick Sanchez"
     let description: String = "some kind of information about this character"
-    let imageURL = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
+    let imageURL = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...5)).jpeg")
     
     //MARK: - BODY
     var body: some View {
@@ -21,23 +22,19 @@ struct CardView: View {
             VStack {
                 //MARK: - HEADER
                 VStack(alignment: .leading) {
-                    
                     Text(name)
-                        .fontWeight(.black)
-                        .font(.system(size: 24))
+                        .modifier(HeaderTextModifier())
                         .foregroundStyle(
                             LinearGradient(
                                 colors: [.customGrayLight, .customGrayMedium],
                                 startPoint: .top, endPoint: .bottom)
                         )
-                    Divider().padding(.bottom)
+                    Divider().padding(.horizontal)
                     Text(description)
-                        .multilineTextAlignment(.leading)
-                        .italic()
+                        .modifier(DescriptionTextModifier())
                         .foregroundColor(.customGrayMedium)
                 } //: HEADER
                 .padding(.horizontal, 30)
-                
                 
                 //MARK: - MAIN CONTENT
                 ZStack {
@@ -58,21 +55,24 @@ struct CardView: View {
                         .clipShape(Circle())
                     
                 }
-                Text("")
+              
                 Button {
                     // ACTION: Show a Sheet
                 } label: {
                     CustomButtonView()
                 }
+                .padding()
             }
         } //: CARD
         .frame(width: 320, height: 570)
     }
+     
+    
 }
 
 //MARK: - PREVIEW
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CharacterCardView()
     }
 }

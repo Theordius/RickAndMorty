@@ -5,6 +5,7 @@
 //  Created by Rafał Gęsior on 24/07/2023.
 //
 
+/// Async image loader for the purposes of the app
 import SwiftUI
 
 struct URLImage: View {
