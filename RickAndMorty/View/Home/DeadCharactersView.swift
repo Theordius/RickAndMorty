@@ -16,7 +16,7 @@ struct DeadCharactersView: View {
             ZStack {
                 CustomAdaptiveBackground()
                 VStack {
-                    NavigationBarView(title: "Dead Characters")
+                    NavigationBarView(title: String(localized: "Dead Characters"))
                         .modifier(NavigationBarStyleModifier())
                     
                     Spacer()

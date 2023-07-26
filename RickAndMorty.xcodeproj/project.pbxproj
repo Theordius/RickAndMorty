@@ -50,6 +50,7 @@
 		105A993F2A7166CE00C83A99 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A993E2A7166CE00C83A99 /* SettingsView.swift */; };
 		105A99412A71672500C83A99 /* SettingsLabelViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99402A71672500C83A99 /* SettingsLabelViewl.swift */; };
 		105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99422A71682C00C83A99 /* SettingsRowView.swift */; };
+		105A99482A717E3F00C83A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 105A994A2A717E3F00C83A99 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		105A993E2A7166CE00C83A99 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		105A99402A71672500C83A99 /* SettingsLabelViewl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelViewl.swift; sourceTree = "<group>"; };
 		105A99422A71682C00C83A99 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		105A99492A717E3F00C83A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		105A994B2A717E5000C83A99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				100D8D9D2A6E796500E38839 /* RickAndMorty */,
+				105A99442A717D9D00C83A99 /* Files */,
 				105A99262A71462200C83A99 /* RickAndMortyTests */,
 				100D8D9C2A6E796500E38839 /* Products */,
 			);
@@ -325,6 +329,23 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		105A99442A717D9D00C83A99 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				105A99472A717E2100C83A99 /* Resources */,
+			);
+			name = Files;
+			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		105A99472A717E2100C83A99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				105A994A2A717E3F00C83A99 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,6 +411,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 100D8D922A6E796500E38839;
 			productRefGroup = 100D8D9C2A6E796500E38839 /* Products */;
@@ -408,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				100D8DA62A6E796700E38839 /* Preview Assets.xcassets in Resources */,
+				105A99482A717E3F00C83A99 /* Localizable.strings in Resources */,
 				100D8DA32A6E796700E38839 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +509,18 @@
 			targetProxy = 105A99292A71462200C83A99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		105A994A2A717E3F00C83A99 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105A99492A717E3F00C83A99 /* en */,
+				105A994B2A717E5000C83A99 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		100D8DA72A6E796700E38839 /* Debug */ = {

@@ -28,9 +28,9 @@ struct ContentView: View {
                         Text("Rick & Morty".uppercased())
                             .modifier(BoldTextModifier())
                         
-                        Text("""
+                        Text(String(localized: """
                             Welcome to the Rick & Morty App, created for all of you who wants to know more about this awesome series!
-                            """)
+                            """))
                             .modifier(HeadlineTextModifier())
                             .foregroundColor(Color.customGreenLight)
                             .multilineTextAlignment(.center)

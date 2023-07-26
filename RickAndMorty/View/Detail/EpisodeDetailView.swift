@@ -13,6 +13,7 @@ struct EpisodeDetailView: View {
     //MARK: - PROPERTIES
     var episode: Episode
     let screenSize = UIScreen.main.bounds.size
+    let summary: String = String(localized: "Some kind of summary of the episode if provided by API")
     
     //MARK: - BODY
     var body: some View {
@@ -29,7 +30,7 @@ struct EpisodeDetailView: View {
                 Text(episode.name.uppercased())
                     .modifier(BoldTextModifier())
                 
-                Text("Some kind of summary of the episode if provided by API")
+                Text(summary)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 

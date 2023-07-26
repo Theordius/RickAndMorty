@@ -16,7 +16,7 @@ struct AliveCharactersView: View {
             ZStack {
                 CustomAdaptiveBackground()
                 VStack {
-                    NavigationBarView(title: "Dead Characters")
+                    NavigationBarView(title: String(localized: "Alive Characters"))
                         .modifier(NavigationBarStyleModifier())
                     Spacer()
                     ScrollView(.horizontal, showsIndicators: false) {
