@@ -194,8 +194,8 @@
 				100D8DBB2A6E883A00E38839 /* ImageLoader.swift */,
 				100D8DBF2A6E9BDD00E38839 /* ColorExtension.swift */,
 				100D8DED2A6FE10600E38839 /* SampleData.swift */,
-				100D8DCC2A6EB08900E38839 /* Modifiers */,
 				105A99152A71257100C83A99 /* Date+Utils.swift */,
+				100D8DCC2A6EB08900E38839 /* Modifiers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

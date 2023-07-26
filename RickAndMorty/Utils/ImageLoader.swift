@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ImageLoader: View {
-    let url: URL
+    let url: URL?
     
     var body: some View {
         AsyncImage(url: url) { phase in

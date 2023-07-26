@@ -17,63 +17,61 @@ struct CharacterCardView: View {
     //MARK: - BODY
     var body: some View {
         //MARK: - CARD
-        ZStack {
-            CharacterCardBackground()
-            VStack {
-                //MARK: - HEADER
-                VStack(alignment: .leading) {
-                    Text(character.name)
-                        .modifier(HeaderTextModifier())
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [.customGrayLight, .customGrayMedium],
-                                startPoint: .top, endPoint: .bottom)
-                        )
-                    Divider().padding(.horizontal)
-                    Text(description)
-                        .modifier(DescriptionTextModifier())
-                        .foregroundColor(.customGrayMedium)
-                } //: HEADER
-                .padding(.horizontal, 8)
-                
-                //MARK: - MAIN CONTENT
-                if let characterImageURL = character.image {
-                    ZStack {
-                        Circle()
-                            .fill(
-                                LinearGradient(colors: [
-                                    Color.customIndigoMedium,
-                                    Color.customSalmonLight
-                                ],
-                                               startPoint: .topLeading,
-                                               endPoint: .bottomTrailing
-                                              )
+            ZStack {
+                CharacterCardBackground()
+                VStack {
+                    //MARK: - HEADER
+                    VStack(alignment: .leading) {
+                        Text(character.name)
+                            .modifier(HeaderTextModifier())
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [.customGrayLight, .customGrayMedium],
+                                    startPoint: .top, endPoint: .bottom)
                             )
-                            .frame(maxWidth: 220, maxHeight: 220)
-                        ImageLoader(url: characterImageURL)
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .frame(maxWidth: 200, maxHeight: 200)
-                    }
-                    Button {
-                        haptics.impactOccurred()
-                        
-                    } label: {
-                        NavigationLink(destination: CharacterDetailView(character: character)) {
-                            CustomButtonView()
+                        Divider().padding(.horizontal)
+                        Text(description)
+                            .modifier(DescriptionTextModifier())
+                            .foregroundColor(.customGrayMedium)
+                    } //: HEADER
+                    .padding(.horizontal, 8)
+                    
+                    //MARK: - MAIN CONTENT
+                    if let characterImageURL = character.image {
+                        ZStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(colors: [
+                                        Color.customIndigoMedium,
+                                        Color.customSalmonLight
+                                    ],
+                                                   startPoint: .topLeading,
+                                                   endPoint: .bottomTrailing
+                                                  )
+                                )
+                                .frame(maxWidth: 220, maxHeight: 220)
+                            ImageLoader(url: characterImageURL)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(maxWidth: 200, maxHeight: 200)
                         }
+                        Button {
+                            haptics.impactOccurred()
+                            
+                        } label: {
+                            NavigationLink(destination: CharacterDetailView(character: character)) {
+                                CustomButtonView()
+                            }
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
-                
-               
-               // .padding()
-            }
-        } //: CARD
-        .frame(width: 320, height: 480)
-        .onAppear {
-            viewModel.fetchCharacters()
+            } //: CARD
+            .frame(width: 320, height: 480)
+            .onAppear {
+                viewModel.fetchCharacters()
         }
+        
     }
 }
 

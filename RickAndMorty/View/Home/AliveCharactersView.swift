@@ -12,35 +12,38 @@ struct AliveCharactersView: View {
     @StateObject var viewModel = ViewModel()
    
     var body: some View {
-        ZStack {
-            CustomAdaptiveBackground()
-            VStack {
-                NavigationBarView(title: "Dead Characters")
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 10)
-                    .padding(.top,
-                             UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-                
-                Spacer()
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(alignment: .center, spacing: 16) {
-                        ForEach(viewModel.aliveCharacters) { character in
-                            CharacterCardView(character: character)
-                        }
-                    }
-                    .padding(.vertical)
-                    .padding(.horizontal, 25)
+        NavigationStack {
+            ZStack {
+                CustomAdaptiveBackground()
+                VStack {
+                    NavigationBarView(title: "Dead Characters")
+                        .padding(.horizontal, 15)
+                        .padding(.bottom, 10)
+                        .padding(.top,
+                                 UIApplication.shared.windows.first?.safeAreaInsets.top)
+                        .background(Color.white)
+                        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                    
                     Spacer()
-                }
-                
-                .onAppear {
-                    viewModel.fetchCharacters()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(alignment: .center, spacing: 16) {
+                            ForEach(viewModel.aliveCharacters) { character in
+                                CharacterCardView(character: character)
+                            }
+                        }
+                        .padding(.vertical)
+                        .padding(.horizontal, 25)
+                        Spacer()
+                    }
+                    
+                    .onAppear {
+                        viewModel.fetchCharacters()
+                    }
                 }
             }
+            .ignoresSafeArea(.all, edges: .top)
         }
-        .ignoresSafeArea(.all, edges: .top)
+        .accentColor(.yellow)
     }
   
 }

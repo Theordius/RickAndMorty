@@ -18,8 +18,7 @@ struct SampleData {
             URL(string: "https://rickandmortyapi.com/api/character/2")!,
            
         ],
-        url: URL(string: "https://rickandmortyapi.com/api/episode/1")!,
-        created: "2017-11-10T12:56:33.798Z"
+        url: URL(string: "https://rickandmortyapi.com/api/episode/1")!
     )
 
     static let characterExample = Character(
@@ -29,5 +28,7 @@ struct SampleData {
         species: "Human",
         gender: "Male",
         image: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!)
+    
+    static let randomImage = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
 }
 

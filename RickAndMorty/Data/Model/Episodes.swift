@@ -16,7 +16,6 @@ struct Episode: Hashable, Identifiable, Codable {
         case episode
         case characters
         case url
-        case created
     }
     
     let id: Int
@@ -25,6 +24,6 @@ struct Episode: Hashable, Identifiable, Codable {
     let episode: String
     let characters: [URL]
     let url: URL
-    let created: String
+  
 
 }

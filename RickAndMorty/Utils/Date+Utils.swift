@@ -9,11 +9,12 @@ import Foundation
 
 extension Date {
     static var appDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "GMT")
-        return formatter
-    }
-    
+           let formatter = DateFormatter()
+           formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+           formatter.timeZone = TimeZone(secondsFromGMT: 0)
+           return formatter
+       }
+   
     var dayMonthYearString: String {
         let dateFormatter = Date.appDateFormatter
         dateFormatter.dateFormat = "dd, MM, yyyy"

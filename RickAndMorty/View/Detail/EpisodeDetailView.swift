@@ -28,7 +28,6 @@ struct EpisodeDetailView: View {
                     .foregroundColor(.white)
                 
                 VStack(alignment: .center, spacing: 8) {
-                    Text("Date Created: \(episode.created)")
                     Text("Air Date: \(episode.airDate)")
                     Divider().padding(.horizontal, 6)
                     Text("Episode Code: \(episode.episode)")

@@ -42,7 +42,7 @@ struct CustomButtonView: View {
                     endPoint: .bottom)
                 )
         } //: ZSTACK
-        .frame(width: 160, height: 58)
+        .frame(width: 88, height: 44)
     }
 }
 

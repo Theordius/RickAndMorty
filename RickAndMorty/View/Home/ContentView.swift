@@ -9,8 +9,7 @@ import SwiftUI
 struct ContentView: View {
     //MARK: - PROPERTIES
     @State private var pulseAnimation: Bool = false
-    let imageURL = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
-    
+   
     //MARK: - BODY
     var body: some View {
         NavigationStack {
@@ -18,7 +17,7 @@ struct ContentView: View {
                 CustomAdaptiveBackground()
                 VStack(alignment: .center, spacing: 8) {
                     Spacer()
-                    ImageLoader(url: imageURL!)
+                    ImageLoader(url: SampleData.randomImage)
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                         .shadow(color: Color.customBlackTransparentDark, radius: 12, x: 0, y: 0)
