@@ -47,6 +47,9 @@
 		105A99362A714AB700C83A99 /* EpisodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99352A714AB700C83A99 /* EpisodesTests.swift */; };
 		105A993A2A715DBC00C83A99 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99392A715DBC00C83A99 /* ErrorHandling.swift */; };
 		105A993C2A7162BB00C83A99 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A993B2A7162BB00C83A99 /* CreditsView.swift */; };
+		105A993F2A7166CE00C83A99 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A993E2A7166CE00C83A99 /* SettingsView.swift */; };
+		105A99412A71672500C83A99 /* SettingsLabelViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99402A71672500C83A99 /* SettingsLabelViewl.swift */; };
+		105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99422A71682C00C83A99 /* SettingsRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		105A99392A715DBC00C83A99 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		105A993B2A7162BB00C83A99 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		105A993D2A71637200C83A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		105A993E2A7166CE00C83A99 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		105A99402A71672500C83A99 /* SettingsLabelViewl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelViewl.swift; sourceTree = "<group>"; };
+		105A99422A71682C00C83A99 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +233,8 @@
 				100D8DD52A6EB2F900E38839 /* EpisodeListRow.swift */,
 				105A991B2A71348400C83A99 /* CharacterDetailGrid.swift */,
 				105A993B2A7162BB00C83A99 /* CreditsView.swift */,
+				105A99402A71672500C83A99 /* SettingsLabelViewl.swift */,
+				105A99422A71682C00C83A99 /* SettingsRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			children = (
 				100D8DDC2A6EC64F00E38839 /* EpisodeDetailView.swift */,
 				100D8DE72A6FD2D200E38839 /* CharacterDetailView.swift */,
+				105A993E2A7166CE00C83A99 /* SettingsView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 				100D8DD62A6EB2F900E38839 /* EpisodeListRow.swift in Sources */,
 				100D8DA12A6E796500E38839 /* ContentView.swift in Sources */,
 				105A993A2A715DBC00C83A99 /* ErrorHandling.swift in Sources */,
+				105A99412A71672500C83A99 /* SettingsLabelViewl.swift in Sources */,
 				100D8DF02A6FE94100E38839 /* Router.swift in Sources */,
 				100D8DC72A6E9E7500E38839 /* CharacterCardBackground.swift in Sources */,
 				100D8DEC2A6FDCA100E38839 /* HeadlineTextModifier.swift in Sources */,
@@ -429,8 +439,10 @@
 				100D8D9F2A6E796500E38839 /* RickAndMortyApp.swift in Sources */,
 				100D8DEE2A6FE10600E38839 /* SampleData.swift in Sources */,
 				100D8DCE2A6EB0AA00E38839 /* HeaderTextModifier.swift in Sources */,
+				105A993F2A7166CE00C83A99 /* SettingsView.swift in Sources */,
 				100D8DB82A6E81B900E38839 /* DeadCharactersView.swift in Sources */,
 				100D8DB02A6E801700E38839 /* AppView.swift in Sources */,
+				105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */,
 				100D8DD92A6EC0A100E38839 /* Episodes.swift in Sources */,
 				100D8DE62A6FBF1400E38839 /* Results.swift in Sources */,
 				100D8DCB2A6E9ED100E38839 /* CustomButtonView.swift in Sources */,

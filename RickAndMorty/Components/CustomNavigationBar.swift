@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationBarView: View {
     //MARK: - PROPERTIES
     @State private var isAnimated: Bool = false
+    @State private var isShowingSettings = false
     var title: String
     
     //MARK: - BODY
@@ -34,11 +35,16 @@ struct NavigationBarView: View {
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                isShowingSettings = true
+            }, label: {
                 ZStack {
                     Image(systemName: "questionmark.circle")
                         .font(.title)
                     .foregroundColor(.black)
+                    .sheet(isPresented: $isShowingSettings) {
+                        SettingsView()
+                    }
                     
                     Circle()
                         .fill(Color.red)

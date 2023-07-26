@@ -52,14 +52,12 @@ struct CharacterDetailGrid: View {
             VStack(alignment: .trailing, spacing: 4) {
                 HStack() {
                     Text(status.uppercased())
-                       
-
+                    
                 }
                 Divider()
                 HStack() {
                     Text(gender.uppercased())
-              
-
+            
                 }
                 Divider()
                 HStack() {
