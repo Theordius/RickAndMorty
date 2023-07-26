@@ -47,7 +47,7 @@ struct ContentView: View {
                     }
                 }
             }
-        }
+        } //: NAVIGATION STACK
     }
 }
 

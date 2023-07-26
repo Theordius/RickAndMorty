@@ -49,25 +49,28 @@ struct CharacterCardView: View {
                                                endPoint: .bottomTrailing
                                               )
                             )
-                            .frame(width: 180, height: 180)
+                            .frame(maxWidth: 220, maxHeight: 220)
                         ImageLoader(url: characterImageURL)
                             .scaledToFit()
-                            .frame(width: 200, height: 200)
                             .clipShape(Circle())
+                            .frame(maxWidth: 200, maxHeight: 200)
                     }
+                    Button {
+                        haptics.impactOccurred()
+                        
+                    } label: {
+                        NavigationLink(destination: CharacterDetailView(character: character)) {
+                            CustomButtonView()
+                        }
+                    }
+                    .padding()
                 }
                 
-                Button {
-                    haptics.impactOccurred()
-                } label: {
-                    NavigationLink(destination: CharacterDetailView(character: character)) {
-                        CustomButtonView()
-                    }
-                }
-                .padding()
+               
+               // .padding()
             }
         } //: CARD
-        .frame(width: 320, height: 500)
+        .frame(width: 320, height: 480)
         .onAppear {
             viewModel.fetchCharacters()
         }
