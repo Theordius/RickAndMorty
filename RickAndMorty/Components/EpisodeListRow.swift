@@ -23,9 +23,9 @@ struct EpisodeListRow: View {
                 )
             
             Text(episodes.name)
-                .font(.title2)
+                .font(.subheadline)
                 .fontWeight(.heavy)
-                .foregroundColor(.accentColor)
+                .foregroundColor(.black)
         } //: VSTACK
     } //: HSTACK
      

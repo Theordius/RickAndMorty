@@ -47,7 +47,7 @@ struct AppView: View {
             tabBarAppearance.configureWithOpaqueBackground()
             tabBarAppearance.backgroundColor = UIColor.white
             tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.black
-            tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.yellow
+            tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.black
             
             UITabBar.appearance().standardAppearance = tabBarAppearance
         }

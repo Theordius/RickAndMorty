@@ -22,7 +22,6 @@ struct NavigationBarView: View {
                 
             }) //: BUTTON
             Spacer()
-            
             CustomNavigationBarHeader(navBarTitle: title)
                 .italic()
                 .opacity(isAnimated ? 1 : 0)

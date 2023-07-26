@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct AliveCharactersView: View {
+    //MARK: - PROPERTIES
     @StateObject var viewModel = ViewModel()
-  
+   
     var body: some View {
         ZStack {
+            CustomAdaptiveBackground()
             VStack {
-                NavigationBarView(title: "Alive Characters")
+                NavigationBarView(title: "Dead Characters")
                     .padding(.horizontal, 15)
                     .padding(.bottom, 10)
                     .padding(.top,
                              UIApplication.shared.windows.first?.safeAreaInsets.top)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(alignment: .center, spacing: 25) {
+                    LazyHStack(alignment: .center, spacing: 16) {
                         ForEach(viewModel.aliveCharacters) { character in
                             CharacterCardView(character: character)
                         }
@@ -36,14 +39,10 @@ struct AliveCharactersView: View {
                     viewModel.fetchCharacters()
                 }
             }
-            .background(
-                Image("background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            )
         }
         .ignoresSafeArea(.all, edges: .top)
     }
+  
 }
 
 //MARK: - PREVIEW

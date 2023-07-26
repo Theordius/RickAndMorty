@@ -13,6 +13,7 @@ struct DeadCharactersView: View {
    
     var body: some View {
         ZStack {
+            CustomAdaptiveBackground()
             VStack {
                 NavigationBarView(title: "Dead Characters")
                     .padding(.horizontal, 15)
@@ -24,7 +25,7 @@ struct DeadCharactersView: View {
                 
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(alignment: .center, spacing: 25) {
+                    LazyHStack(alignment: .center, spacing: 16) {
                         ForEach(viewModel.deadCharacters) { character in
                             CharacterCardView(character: character)
                         }

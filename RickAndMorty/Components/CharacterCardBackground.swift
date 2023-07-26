@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CharacterCardBackground: View {
     var body: some View {
-        GeometryReader { geometry in
             ZStack {
                 // MARK: - 3. DEPTH
                 Color.customGreenDark
@@ -31,10 +30,6 @@ struct CharacterCardBackground: View {
                 )
                 .cornerRadius(40)
             }
-            .frame(width: geometry.size.width - 20, height: geometry.size.height - 20)
-            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-        }
-     
     }
 }
 
