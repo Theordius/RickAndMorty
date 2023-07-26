@@ -41,6 +41,9 @@
 		100D8DFC2A711E0500E38839 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100D8DFB2A711E0500E38839 /* Launch Screen.storyboard */; };
 		105A99132A7124EF00C83A99 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99122A7124EF00C83A99 /* NetworkManagerTests.swift */; };
 		105A99162A71257100C83A99 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99152A71257100C83A99 /* Date+Utils.swift */; };
+		105A991A2A71343F00C83A99 /* IconModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99192A71343F00C83A99 /* IconModifier.swift */; };
+		105A991C2A71348400C83A99 /* CharacterDetailGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A991B2A71348400C83A99 /* CharacterDetailGrid.swift */; };
+		105A991E2A713C4A00C83A99 /* NavigationBarStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A991D2A713C4A00C83A99 /* NavigationBarStyleModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		105A99082A7124C000C83A99 /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105A99122A7124EF00C83A99 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		105A99152A71257100C83A99 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		105A99192A71343F00C83A99 /* IconModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModifier.swift; sourceTree = "<group>"; };
+		105A991B2A71348400C83A99 /* CharacterDetailGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailGrid.swift; sourceTree = "<group>"; };
+		105A991D2A713C4A00C83A99 /* NavigationBarStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyleModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 				100D8DF32A70047600E38839 /* CustomNavigationBarHeader.swift */,
 				100D8DD52A6EB2F900E38839 /* EpisodeListRow.swift */,
 				100D8DFB2A711E0500E38839 /* Launch Screen.storyboard */,
+				105A991B2A71348400C83A99 /* CharacterDetailGrid.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -223,6 +230,8 @@
 				100D8DD12A6EB17400E38839 /* DescriptionTextModifier.swift */,
 				100D8DCD2A6EB0AA00E38839 /* HeaderTextModifier.swift */,
 				100D8DEB2A6FDCA100E38839 /* HeadlineTextModifier.swift */,
+				105A99192A71343F00C83A99 /* IconModifier.swift */,
+				105A991D2A713C4A00C83A99 /* NavigationBarStyleModifier.swift */,
 			);
 			name = Modifiers;
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 				100D8DF02A6FE94100E38839 /* Router.swift in Sources */,
 				100D8DC72A6E9E7500E38839 /* CharacterCardBackground.swift in Sources */,
 				100D8DEC2A6FDCA100E38839 /* HeadlineTextModifier.swift in Sources */,
+				105A991A2A71343F00C83A99 /* IconModifier.swift in Sources */,
 				100D8D9F2A6E796500E38839 /* RickAndMortyApp.swift in Sources */,
 				100D8DEE2A6FE10600E38839 /* SampleData.swift in Sources */,
 				100D8DCE2A6EB0AA00E38839 /* HeaderTextModifier.swift in Sources */,
@@ -397,6 +407,7 @@
 				100D8DE62A6FBF1400E38839 /* Results.swift in Sources */,
 				100D8DCB2A6E9ED100E38839 /* CustomButtonView.swift in Sources */,
 				100D8DEA2A6FDA4700E38839 /* BoldTextModifier.swift in Sources */,
+				105A991E2A713C4A00C83A99 /* NavigationBarStyleModifier.swift in Sources */,
 				100D8DE82A6FD2D200E38839 /* CharacterDetailView.swift in Sources */,
 				100D8DC92A6E9E9E00E38839 /* CharacterCardView.swift in Sources */,
 				100D8DB62A6E81A400E38839 /* AliveCharactersView.swift in Sources */,
@@ -407,6 +418,7 @@
 				100D8DBC2A6E883A00E38839 /* ImageLoader.swift in Sources */,
 				100D8DD22A6EB17400E38839 /* DescriptionTextModifier.swift in Sources */,
 				100D8DBE2A6E8FD400E38839 /* NetworkManager.swift in Sources */,
+				105A991C2A71348400C83A99 /* CharacterDetailGrid.swift in Sources */,
 				105A99162A71257100C83A99 /* Date+Utils.swift in Sources */,
 				100D8DB42A6E819100E38839 /* EpisodesView.swift in Sources */,
 				100D8DC02A6E9BDD00E38839 /* ColorExtension.swift in Sources */,

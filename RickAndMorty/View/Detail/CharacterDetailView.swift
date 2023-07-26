@@ -21,15 +21,16 @@ struct CharacterDetailView: View {
             
             Text("")
             
-            ImageLoader(url: character.image!)
+            ImageLoader(url: character.image ?? SampleData.randomImage)
                 .scaledToFit()
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)
           
             VStack(alignment: .center, spacing: 8) {
-                Text(character.status)
-                Text(character.species)
-                Text(character.gender)
+                CharacterDetailGrid(status: character.status,
+                                    gender: character.gender,
+                                    species: character.species)
+              
             }
             .modifier(HeadlineTextModifier())
             .foregroundColor(.white)
