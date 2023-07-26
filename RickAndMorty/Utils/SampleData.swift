@@ -27,7 +27,7 @@ struct SampleData {
         status: "Alive",
         species: "Human",
         gender: "Male",
-        image: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!)
+        image: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
     
     static let randomImage = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
 }

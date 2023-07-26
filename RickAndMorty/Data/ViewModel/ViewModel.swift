@@ -12,6 +12,12 @@ import SwiftUI
     @Published private(set) var episodes = [Episode]()
     @Published private(set) var characters = [Character]()
     
+    lazy var errorAlert: UIAlertController = {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
+    
     var aliveCharacters: [Character] {
            characters.filter { $0.status == "Alive" }
        }

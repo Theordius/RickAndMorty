@@ -10,6 +10,12 @@ import SwiftUI
 struct EpisodesView: View {
     @StateObject var viewModel = ViewModel()
     
+    lazy var errorAlert: UIAlertController = {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {

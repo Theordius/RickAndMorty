@@ -46,6 +46,7 @@
 		105A99322A714A9100C83A99 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99312A714A9100C83A99 /* NetworkManagerTests.swift */; };
 		105A99342A714AA400C83A99 /* CharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99332A714AA400C83A99 /* CharactersTests.swift */; };
 		105A99362A714AB700C83A99 /* EpisodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99352A714AB700C83A99 /* EpisodesTests.swift */; };
+		105A993A2A715DBC00C83A99 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99392A715DBC00C83A99 /* ErrorHandling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		105A99312A714A9100C83A99 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		105A99332A714AA400C83A99 /* CharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTests.swift; sourceTree = "<group>"; };
 		105A99352A714AB700C83A99 /* EpisodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTests.swift; sourceTree = "<group>"; };
+		105A99392A715DBC00C83A99 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				100D8DBD2A6E8FD400E38839 /* NetworkManager.swift */,
+				105A99392A715DBC00C83A99 /* ErrorHandling.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				100D8DDB2A6EC0B900E38839 /* Characters.swift in Sources */,
 				100D8DD62A6EB2F900E38839 /* EpisodeListRow.swift in Sources */,
 				100D8DA12A6E796500E38839 /* ContentView.swift in Sources */,
+				105A993A2A715DBC00C83A99 /* ErrorHandling.swift in Sources */,
 				100D8DF02A6FE94100E38839 /* Router.swift in Sources */,
 				100D8DC72A6E9E7500E38839 /* CharacterCardBackground.swift in Sources */,
 				100D8DEC2A6FDCA100E38839 /* HeadlineTextModifier.swift in Sources */,
