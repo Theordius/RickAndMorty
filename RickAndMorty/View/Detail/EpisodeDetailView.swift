@@ -16,35 +16,39 @@ struct EpisodeDetailView: View {
     
     //MARK: - BODY
     var body: some View {
-        VStack(alignment: .center, spacing: 16) {
-            Spacer()
-            Text(episode.name.uppercased())
-                .modifier(BoldTextModifier())
-            
-            Text("Some kind of summary of the episode if provided by API")
-                .multilineTextAlignment(.center)
+        ZStack {
+            CustomAdaptiveBackground()
+            VStack(alignment: .center, spacing: 16) {
+                Spacer()
+                Text(episode.name.uppercased())
+                    .modifier(BoldTextModifier())
+                
+                Text("Some kind of summary of the episode if provided by API")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                
+                VStack(alignment: .center, spacing: 8) {
+                    Text("Date Created: \(episode.created)")
+                    Text("Air Date: \(episode.airDate)")
+                    Divider().padding(.horizontal, 6)
+                    Text("Episode Code: \(episode.episode)")
+                   
+                }
+                .modifier(HeadlineTextModifier())
                 .foregroundColor(.white)
-            
-            VStack(alignment: .center, spacing: 8) {
-                Text("Date Created: \(episode.created)")
-                Text("Air Date: \(episode.airDate)")
-                Divider().padding(.horizontal, 6)
-                Text("Episode Code: \(episode.episode)")
-               
+                
+                
+                Spacer()
             }
-            .modifier(HeadlineTextModifier())
-            .foregroundColor(.white)
-            
-            
-            Spacer()
+          
         }
-        .background(
-            Image("background")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: screenSize.width, height: screenSize.height)
-        )
-        .edgesIgnoringSafeArea(.all)
+//        .background(
+//            Image("background")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(width: screenSize.width, height: screenSize.height)
+//        )
+//        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

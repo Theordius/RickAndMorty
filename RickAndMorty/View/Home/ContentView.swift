@@ -7,23 +7,48 @@
 import SwiftUI
 
 struct ContentView: View {
+    //MARK: - PROPERTIES
+    @State private var pulseAnimation: Bool = false
+    let imageURL = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
+    
+    //MARK: - BODY
     var body: some View {
         ZStack {
-            VStack(spacing: 0) {
+            CustomAdaptiveBackground()
+            VStack(alignment: .center, spacing: 8) {
                 Spacer()
-                NavigationBarView(title: "Episodes")
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 10)
-                    .padding(.top,
-                             UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-                EpisodesView()
+                ImageLoader(url: imageURL!)
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(Circle())
+                    .shadow(color: Color.customBlackTransparentDark, radius: 12, x: 0, y: 0)
+                    .frame(width: 240, height: 240, alignment: .center)
+                    .scaleEffect(self.pulseAnimation ? 1: 0.9)
+                    .opacity(self.pulseAnimation ? 1 : 0.95)
+                
+                    Text("Rick & Morty".uppercased())
+                        .modifier(BoldTextModifier())
+                    
+                    Text("""
+                        Welcome to the Rick & Morty App, created for all of you who wants to know more about this awesome series!
+                        """)
+                        .modifier(HeadlineTextModifier())
+                        .foregroundColor(Color.customGreenLight)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+               
+                .padding(.bottom, 20) // Add padding at the bottom
                 Spacer()
+            }
+            .padding(.horizontal) // Add horizontal padding
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                    self.pulseAnimation.toggle()
+                }
             }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

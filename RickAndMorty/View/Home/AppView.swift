@@ -15,23 +15,25 @@ struct AppView: View {
     var body: some View {
         ZStack {
             TabView {
-                AboutView()
-                    .tabItem{
-                        Image(systemName:"square.grid.2x2")
-                        Text(String(localized: "About"))
-                        
-                    }
                 ContentView()
+                    .tabItem{
+                        Image(systemName:"house.fill")
+                        Text(String(localized: "About"))
+                    }
+                
+                EpisodesView()
                     .tabItem {
                         Image(systemName:"list.star")
                         Text(String(localized: "Episodes"))
                     }
-                AliveCharactersView(characters: [SampleData.characterExample, SampleData.characterExample])
+                
+                AliveCharactersView()
                     .tabItem {
                         Image(systemName:"heart.fill")
                         Text(String(localized: "Alive"))
                     }
-                DeadCharactersView(characters: [SampleData.characterExample, SampleData.characterExample])
+                
+                DeadCharactersView()
                     .tabItem {
                         Image(systemName:"heart.slash.fill")
                         Text(String(localized: "Dead"))
@@ -39,7 +41,7 @@ struct AppView: View {
                     }
             }
         } // TAB
-        .accentColor(Color.yellow)
+        .accentColor(Color.primary)
         
         .onAppear {
             tabBarAppearance.configureWithOpaqueBackground()

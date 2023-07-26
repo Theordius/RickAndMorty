@@ -1,5 +1,5 @@
 //
-//  CardView.swift
+//  CharacterCardView.swift
 //  RickAndMorty
 //
 //  Created by Rafał Gęsior on 24/07/2023.
@@ -20,7 +20,7 @@ struct CharacterCardView: View {
         //MARK: - CARD
         NavigationView {
             ZStack {
-                CustomBackgroundView()
+                CharacterCardBackground()
                 VStack {
                     //MARK: - HEADER
                     VStack(alignment: .leading) {
