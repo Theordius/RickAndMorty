@@ -11,7 +11,8 @@ struct HeaderTextModifier: ViewModifier {
     func body(content: Content) -> some View {
             content
             .fontWeight(.black)
-            .font(.system(size: 16))
+            .multilineTextAlignment(.center)
+            .font(.system(size: 24))
             .foregroundColor(Color.white)
     }
 }

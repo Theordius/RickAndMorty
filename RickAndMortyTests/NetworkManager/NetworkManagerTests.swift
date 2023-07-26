@@ -24,7 +24,7 @@ class NetworkManagerTests: XCTestCase {
             character = Character(id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", gender: "Male", image: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
         }
     }
-    
+
     @MainActor override func setUp() {
         super.setUp()
         vc = ViewModel()

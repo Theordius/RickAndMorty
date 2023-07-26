@@ -12,7 +12,7 @@ struct CharacterCardView: View {
     @StateObject var viewModel = ViewModel()
     let character: Character
     let haptics = UIImpactFeedbackGenerator(style: .medium)
-    let description = String(localized: "Some kind of character description if api had provided it..." )
+    let description = String(localized: "Brief character description if it was provided by API")
     
     //MARK: - BODY
     var body: some View {
@@ -21,14 +21,14 @@ struct CharacterCardView: View {
                 CharacterCardBackground()
                 VStack {
                     //MARK: - HEADER
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         Text(character.name)
-                            .modifier(HeaderTextModifier())
                             .foregroundStyle(
                                 LinearGradient(
                                     colors: [.customGrayLight, .customGrayMedium],
                                     startPoint: .top, endPoint: .bottom)
                             )
+                            .modifier(HeaderTextModifier())
                         Divider().padding(.horizontal)
                         Text(description)
                             .modifier(DescriptionTextModifier())
@@ -49,11 +49,11 @@ struct CharacterCardView: View {
                                                    endPoint: .bottomTrailing
                                                   )
                                 )
-                                .frame(maxWidth: 220, maxHeight: 220)
+                                .frame(maxWidth: 180, maxHeight: 180)
                             ImageLoader(url: characterImageURL)
                                 .scaledToFit()
                                 .clipShape(Circle())
-                                .frame(maxWidth: 200, maxHeight: 200)
+                                .frame(maxWidth: 170, maxHeight: 170)
                         }
                         Button {
                             haptics.impactOccurred()
@@ -67,14 +67,13 @@ struct CharacterCardView: View {
                     }
                 }
             } //: CARD
-            .frame(width: 320, height: 480)
+            .frame(idealWidth: 320, maxWidth: 320, idealHeight: 520, maxHeight: 520)
             .onAppear {
                 viewModel.fetchCharacters()
         }
         
     }
 }
-
 
 //MARK: - PREVIEW
 struct CharacterCardView_Previews: PreviewProvider {

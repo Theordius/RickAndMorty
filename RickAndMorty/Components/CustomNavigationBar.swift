@@ -11,17 +11,27 @@ struct NavigationBarView: View {
     //MARK: - PROPERTIES
     @State private var isAnimated: Bool = false
     @State private var isShowingSettings = false
+    @State private var isShowingAlert = false
+    
     var title: String
     
     //MARK: - BODY
     var body: some View {
         HStack {
-            Button(action: {}, label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.title)
-                    .foregroundColor(.black)
-                
-            }) //: BUTTON
+                   Button(action: {
+                       isShowingAlert = true 
+                   }, label: {
+                       Image(systemName: "magnifyingglass")
+                           .font(.title)
+                           .foregroundColor(.black)
+                   }) //: BUTTON
+                   .alert(isPresented: $isShowingAlert, content: {
+                       Alert(
+                           title: Text("Feature under Development"),
+                           message: nil,
+                           dismissButton: .default(Text("OK"))
+                       )
+                   })
             Spacer()
             CustomNavigationBarHeader(navBarTitle: title)
                 .italic()
@@ -41,10 +51,10 @@ struct NavigationBarView: View {
                 ZStack {
                     Image(systemName: "questionmark.circle")
                         .font(.title)
-                    .foregroundColor(.black)
-                    .sheet(isPresented: $isShowingSettings) {
-                        SettingsView()
-                    }
+                        .foregroundColor(.black)
+                        .sheet(isPresented: $isShowingSettings) {
+                            SettingsView()
+                        }
                     
                     Circle()
                         .fill(Color.red)

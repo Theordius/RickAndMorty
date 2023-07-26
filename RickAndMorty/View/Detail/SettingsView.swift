@@ -26,15 +26,18 @@ struct SettingsView: View {
                             label: SettingsLabelView(labelText: "About the Application", labelImage: "questionmark.circle")
                         ) {
                             Divider().padding(.vertical, 4)
-                            
-                            Text("This application was build for recruitment purposes entirely in SwiftUI without usage of 3rd party libraries")
-                                .italic()
-                                .padding(.vertical)
-                                .frame(minWidth: 60)
-                                .layoutPriority(1)
-                                .font(.footnote)
-                                .multilineTextAlignment(.leading)
-                            
+                            HStack(alignment: .center, spacing: 10) {
+                                Image("rick")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80, height: 80)
+                                    .cornerRadius(9)
+                                
+                                Text("This application was build for recruitment purposes entirely in SwiftUI without usage of 3rd party libraries.")
+                                    .italic()
+                                    .font(.footnote)
+                                 
+                            }
                                 .padding()
                                 .background(
                                     Color(UIColor.tertiarySystemBackground)
@@ -47,11 +50,10 @@ struct SettingsView: View {
                             label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")
                         ) {
                             SettingsRowView(name: "Developer", content: "Rafal Gesior")
-                            SettingsRowView(name: "Compability", content: "iOS 15")
+                            SettingsRowView(name: "Compability", content: "iOS 16")
                             SettingsRowView(name: "Website", linkLabel: "Sii Poland", linkDestination: "www.sii.pl/en/")
-                            SettingsRowView(name: "Twitter", linkLabel: "@rufus83", linkDestination: "twitter.com/rufus_gaming")
                             SettingsRowView(name: "SwiftUI", content: "4.0")
-                            SettingsRowView(name: "Version", content: "1.0")
+                            SettingsRowView(name: "App Version", content: "1.0")
                             
                         } //: BOX
                     } //: VSTACK
