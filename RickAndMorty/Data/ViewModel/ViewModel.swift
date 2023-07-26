@@ -4,6 +4,7 @@
 //
 //  Created by Rafał Gęsior on 25/07/2023.
 //
+/// I'am fully aware that the application takes data only from the first page of the API, didn't have enough time to figure it out in better way
 
 import SwiftUI
 

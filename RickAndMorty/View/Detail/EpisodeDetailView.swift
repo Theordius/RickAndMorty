@@ -20,6 +20,12 @@ struct EpisodeDetailView: View {
             CustomAdaptiveBackground()
             VStack(alignment: .center, spacing: 16) {
                 Spacer()
+                Image(systemName: "questionmark.app")
+                   .font(Font.title.weight(.bold))
+                    .font(.system(.caption2))
+                    .foregroundColor(.white)
+                    .imageScale(.large)
+                
                 Text(episode.name.uppercased())
                     .modifier(BoldTextModifier())
                 
@@ -41,13 +47,6 @@ struct EpisodeDetailView: View {
             }
           
         }
-//        .background(
-//            Image("background")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .frame(width: screenSize.width, height: screenSize.height)
-//        )
-//        .ignoresSafeArea(.all, edges: .all)
     }
 }
 
