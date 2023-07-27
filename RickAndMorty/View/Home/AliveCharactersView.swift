@@ -10,7 +10,7 @@ import SwiftUI
 struct AliveCharactersView: View {
     //MARK: - PROPERTIES
     @StateObject var viewModel = ViewModel()
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -19,7 +19,7 @@ struct AliveCharactersView: View {
                     NavigationBarView(title: String(localized: "Alive Characters"))
                         .modifier(NavigationBarStyleModifier())
                     Spacer()
-
+                    
                     if viewModel.charactersLoadingState == .loading {
                         GeometryReader { geometry in
                             ZStack {
@@ -29,18 +29,20 @@ struct AliveCharactersView: View {
                         }
                     } else {
                         TabView {
-                            ForEach(viewModel.aliveCharacters) { character in
-                                CharacterCardView(character: character)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 25)
+                                ForEach(viewModel.aliveCharacters) { character in
+                                    CharacterCardView(character: character)
+                                        .padding(.vertical)
+                                        .padding(.horizontal, 25)
                             }
+                            Spacer()
                         }
                         .tabViewStyle(PageTabViewStyle())
                     }
                 }
             }
+            .ignoresSafeArea(.all, edges: .top)
         }
-        .ignoresSafeArea(.all, edges: .top)
+        .accentColor(.yellow)
         .onAppear {
             // Data loading was delayed for testing purposes
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -49,8 +51,6 @@ struct AliveCharactersView: View {
         }
     }
 }
-
-
 
 
 //MARK: - PREVIEW
