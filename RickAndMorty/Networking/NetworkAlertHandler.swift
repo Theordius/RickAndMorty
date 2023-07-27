@@ -1,5 +1,5 @@
 //
-//  ErrorHandling.swift
+//  NetworkAlertHandler.swift
 //  RickAndMorty
 //
 //  Created by Rafał Gęsior on 26/07/2023.

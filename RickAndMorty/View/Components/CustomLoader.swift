@@ -30,8 +30,6 @@ struct CustomLoader: View {
                     .resizable()
                     .frame(width: 120, height: 120)
                 
-                Divider().padding(.vertical, 15)
-                
                 ProgressView("Loading...", value: loadingData, total: 100.0)
                     .frame(width: 220)
                     .onReceive(timer) { _ in
@@ -40,6 +38,7 @@ struct CustomLoader: View {
                         }
                     }
             }
+            .accentColor(.blue)
         }
     }
 }

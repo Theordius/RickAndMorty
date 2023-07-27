@@ -9,33 +9,38 @@ import SwiftUI
 
 struct EpisodesView: View {
     @StateObject var viewModel = ViewModel()
-    lazy var errorAlert: UIAlertController = {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        return alert
-    }()
-    
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Spacer()
-                NavigationBarView(title: "Episodes")
-                    .modifier(NavigationBarStyleModifier())
-                Spacer()
-                
-                List(viewModel.episodes) { episode in
-                    NavigationLink(destination: EpisodeDetailView(episode: episode)) {
-                        EpisodeListRow(episodes: episode)
+                if viewModel.episodesLoadingState == .loading {
+                    CustomLoader()
+                } else {
+                    VStack(spacing: 0) {
+                        NavigationBarView(title: "Episodes")
+                            .modifier(NavigationBarStyleModifier())
+
+                        List(viewModel.episodes) { episode in
+                            NavigationLink(destination: EpisodeDetailView(episode: episode)) {
+                                EpisodeListRow(episodes: episode)
+                            }
+                        }
                     }
-                }
-                .onAppear {
-                    viewModel.fetchEpisodes()
+                    .ignoresSafeArea(.all, edges: .top)
                 }
             }
-            .ignoresSafeArea(.all, edges: .top)
+        }
+        .accentColor(.yellow)
+        .onAppear {
+            // Data loading was delayed for testing purposes
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                viewModel.fetchEpisodes()
+            }
         }
     }
 }
+
+
 
 //MARK: - PREVIEW
 struct EpisodesView_Previews: PreviewProvider {
@@ -43,4 +48,5 @@ struct EpisodesView_Previews: PreviewProvider {
         EpisodesView()
     }
 }
+
 
