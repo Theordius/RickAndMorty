@@ -11,18 +11,23 @@ import SwiftUI
 
 struct CustomAdaptiveBackground: View {
     //MARK: - PROPERTIES
-    let screenSize = UIScreen.main.bounds.size
+    
+    @ViewBuilder
+    private var customBackground: some View {
+        ZStack {
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        }
+    }
     
     //MARK: - BODY
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image("background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width, height: screenSize.height)
+                customBackground
             }
-            .ignoresSafeArea(.all, edges: .all)
         }
     }
 }
