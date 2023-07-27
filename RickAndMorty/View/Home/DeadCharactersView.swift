@@ -10,16 +10,16 @@ import SwiftUI
 struct DeadCharactersView: View {
     //MARK: - PROPERTIES
     @StateObject var viewModel = ViewModel()
-   
+
     var body: some View {
         NavigationStack {
             ZStack {
                 CustomAdaptiveBackground()
                 VStack {
-                    NavigationBarView(title: String(localized: "Dead Characters"))
+                    NavigationBarView(title: String(localized: "Alive Characters"))
                         .modifier(NavigationBarStyleModifier())
                     Spacer()
-                    
+
                     if viewModel.charactersLoadingState == .loading {
                         GeometryReader { geometry in
                             ZStack {
@@ -28,22 +28,19 @@ struct DeadCharactersView: View {
                             }
                         }
                     } else {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack(alignment: .center, spacing: 16) {
-                                ForEach(viewModel.aliveCharacters) { character in
-                                    CharacterCardView(character: character)
-                                }
+                        TabView {
+                            ForEach(viewModel.deadCharacters) { character in
+                                CharacterCardView(character: character)
+                                    .padding(.vertical)
+                                    .padding(.horizontal, 25)
                             }
-                            .padding(.vertical)
-                            .padding(.horizontal, 25)
-                            Spacer()
                         }
+                        .tabViewStyle(PageTabViewStyle())
                     }
                 }
             }
-            .ignoresSafeArea(.all, edges: .top)
         }
-        .accentColor(.yellow)
+        .ignoresSafeArea(.all, edges: .top)
         .onAppear {
             // Data loading was delayed for testing purposes
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
