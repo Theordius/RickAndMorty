@@ -19,7 +19,7 @@ import SwiftUI
     }()
     
     var aliveCharacters: [Character] {
-           characters.filter { $0.status == "Alive" }
+        characters.filter { $0.status == "Alive" || $0.status == "unknown" }
        }
     
     var deadCharacters: [Character] {

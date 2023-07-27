@@ -51,6 +51,9 @@
 		105A99412A71672500C83A99 /* SettingsLabelViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99402A71672500C83A99 /* SettingsLabelViewl.swift */; };
 		105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99422A71682C00C83A99 /* SettingsRowView.swift */; };
 		105A99482A717E3F00C83A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 105A994A2A717E3F00C83A99 /* Localizable.strings */; };
+		107EF11B2A72527B00AB761C /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107EF11A2A72527B00AB761C /* CustomLoader.swift */; };
+		107EF11D2A72551300AB761C /* CharacterStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107EF11C2A72551300AB761C /* CharacterStatusBar.swift */; };
+		107EF11F2A725B6600AB761C /* GradientTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107EF11E2A725B6600AB761C /* GradientTextModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		105A99422A71682C00C83A99 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		105A99492A717E3F00C83A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		105A994B2A717E5000C83A99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		107EF11A2A72527B00AB761C /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		107EF11C2A72551300AB761C /* CharacterStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatusBar.swift; sourceTree = "<group>"; };
+		107EF11E2A725B6600AB761C /* GradientTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTextModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,9 +236,11 @@
 			children = (
 				100D8DC62A6E9E7500E38839 /* CharacterCardBackground.swift */,
 				100D8DC82A6E9E9E00E38839 /* CharacterCardView.swift */,
+				107EF11C2A72551300AB761C /* CharacterStatusBar.swift */,
 				100D8DF52A71041900E38839 /* CustomAdaptiveBackground.swift */,
 				100D8DCA2A6E9ED100E38839 /* CustomButtonView.swift */,
 				100D8DF12A70041700E38839 /* CustomNavigationBar.swift */,
+				107EF11A2A72527B00AB761C /* CustomLoader.swift */,
 				100D8DF32A70047600E38839 /* CustomNavigationBarHeader.swift */,
 				100D8DD52A6EB2F900E38839 /* EpisodeListRow.swift */,
 				105A991B2A71348400C83A99 /* CharacterDetailGrid.swift */,
@@ -253,6 +261,7 @@
 				100D8DEB2A6FDCA100E38839 /* HeadlineTextModifier.swift */,
 				105A99192A71343F00C83A99 /* IconModifier.swift */,
 				105A991D2A713C4A00C83A99 /* NavigationBarStyleModifier.swift */,
+				107EF11E2A725B6600AB761C /* GradientTextModifier.swift */,
 			);
 			name = Modifiers;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				100D8DDB2A6EC0B900E38839 /* Characters.swift in Sources */,
+				107EF11D2A72551300AB761C /* CharacterStatusBar.swift in Sources */,
 				100D8DD62A6EB2F900E38839 /* EpisodeListRow.swift in Sources */,
 				100D8DA12A6E796500E38839 /* ContentView.swift in Sources */,
 				105A993A2A715DBC00C83A99 /* ErrorHandling.swift in Sources */,
@@ -457,6 +467,7 @@
 				100D8DF02A6FE94100E38839 /* Router.swift in Sources */,
 				100D8DC72A6E9E7500E38839 /* CharacterCardBackground.swift in Sources */,
 				100D8DEC2A6FDCA100E38839 /* HeadlineTextModifier.swift in Sources */,
+				107EF11B2A72527B00AB761C /* CustomLoader.swift in Sources */,
 				105A991A2A71343F00C83A99 /* IconModifier.swift in Sources */,
 				105A993C2A7162BB00C83A99 /* CreditsView.swift in Sources */,
 				100D8D9F2A6E796500E38839 /* RickAndMortyApp.swift in Sources */,
@@ -465,6 +476,7 @@
 				105A993F2A7166CE00C83A99 /* SettingsView.swift in Sources */,
 				100D8DB82A6E81B900E38839 /* DeadCharactersView.swift in Sources */,
 				100D8DB02A6E801700E38839 /* AppView.swift in Sources */,
+				107EF11F2A725B6600AB761C /* GradientTextModifier.swift in Sources */,
 				105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */,
 				100D8DD92A6EC0A100E38839 /* Episodes.swift in Sources */,
 				100D8DE62A6FBF1400E38839 /* Results.swift in Sources */,
