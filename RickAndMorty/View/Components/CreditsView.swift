@@ -37,6 +37,5 @@ struct CreditsView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()
-            
     }
 }

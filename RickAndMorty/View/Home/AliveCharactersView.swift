@@ -52,10 +52,10 @@ struct AliveCharactersView: View {
     }
 }
 
-
 //MARK: - PREVIEW
 struct AliveCharactersView_Previews: PreviewProvider {
     static var previews: some View {
         AliveCharactersView()
+            .environmentObject(LaunchScreenStateManager())
     }
 }

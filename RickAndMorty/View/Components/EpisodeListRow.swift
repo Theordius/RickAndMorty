@@ -28,7 +28,6 @@ struct EpisodeListRow: View {
                 .foregroundColor(.black)
         } //: VSTACK
     } //: HSTACK
-     
 }
 
 //MARK: - PREVIEW

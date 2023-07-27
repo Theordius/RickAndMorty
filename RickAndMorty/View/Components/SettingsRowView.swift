@@ -36,9 +36,7 @@ struct SettingsRowView: View {
       }
     }
   }
-
   // MARK: - PREVIEW
-
   struct SettingsRowView_Previews: PreviewProvider {
     static var previews: some View {
       Group {

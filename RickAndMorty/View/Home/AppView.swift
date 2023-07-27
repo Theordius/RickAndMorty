@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppView: View {
     //MARK: - PROPERTIES
- 
+    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
     //MARK: - BODY
     var body: some View {
         TabView {
@@ -38,9 +38,10 @@ struct AppView: View {
                         Text(String(localized: "Dead"))
                     }
             }
-//                        .toolbarBackground(Color.white, for: .tabBar)
-//                        .toolbar(.visible, for: .tabBar)
-        
+        }
+        .task {
+            try? await Task.sleep(for: Duration.seconds(1))
+            self.launchScreenState.dismiss()
         }
         .accentColor(Color.black)
         .onAppear {
@@ -51,10 +52,10 @@ struct AppView: View {
     }
 }
 
-
 //MARK: - PREVIEW
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(LaunchScreenStateManager())
     }
 }

@@ -24,7 +24,6 @@ struct CustomNavigationBarHeader: View {
                 .foregroundColor(.black)
                 
         } //: HSTACK
-        
     }
 }
 

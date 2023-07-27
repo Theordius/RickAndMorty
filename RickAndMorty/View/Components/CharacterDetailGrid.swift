@@ -24,15 +24,13 @@ struct CharacterDetailGrid: View {
                 }
                 Divider()
                 HStack() {
-                   
+                    
                     Text(String(localized: "Species:").uppercased())
                 }
                 Divider()
                 HStack() {
                     Text(String(localized: "Gender:").uppercased())
                 }
-              
-             
             }
             // 2nd Column
             VStack(alignment: .center, spacing: 16) {
@@ -57,12 +55,12 @@ struct CharacterDetailGrid: View {
                 Divider()
                 HStack() {
                     Text(gender.uppercased())
-            
+                    
                 }
                 Divider()
                 HStack() {
                     Text(species.uppercased())
-        
+                    
                 }
             }
         }

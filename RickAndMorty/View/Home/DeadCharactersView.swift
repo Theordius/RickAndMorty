@@ -52,11 +52,10 @@ struct DeadCharactersView: View {
     }
 }
 
-
-
 //MARK: - PREVIEW
 struct DeadCharactersView_Previews: PreviewProvider {
     static var previews: some View {
         DeadCharactersView()
+            .environmentObject(LaunchScreenStateManager())
     }
 }

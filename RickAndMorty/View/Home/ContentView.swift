@@ -9,6 +9,7 @@ import SwiftUI
 struct ContentView: View {
     //MARK: - PROPERTIES
     @State private var pulseAnimation: Bool = false
+ 
    
     //MARK: - BODY
     var body: some View {
@@ -39,7 +40,8 @@ struct ContentView: View {
                     .padding(.bottom, 20) // Add padding at the bottom
                     Spacer()
                 }
-                .padding(.horizontal) // Add horizontal padding
+              
+                .padding(.horizontal)
                 .onAppear {
                     withAnimation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                         self.pulseAnimation.toggle()
@@ -55,5 +57,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .environmentObject(LaunchScreenStateManager())
     }
 }

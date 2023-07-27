@@ -40,12 +40,11 @@ struct EpisodesView: View {
     }
 }
 
-
-
 //MARK: - PREVIEW
 struct EpisodesView_Previews: PreviewProvider {
     static var previews: some View {
         EpisodesView()
+            .environmentObject(LaunchScreenStateManager())
     }
 }
 
