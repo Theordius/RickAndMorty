@@ -7,9 +7,6 @@
 
 //MARK: - ViewModel extension build for Unit Testing
 extension CharactersViewModel {
-    private func displayError(_ error: NetworkError) {
-        let titleAndMessage = titleAndMessage(for: error)
-    }
     
     private func titleAndMessage(for error: NetworkError) -> (String, String) {
         let title: String
