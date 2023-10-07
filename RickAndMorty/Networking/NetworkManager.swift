@@ -8,37 +8,31 @@
 import Foundation
 
 protocol DataManagable {
-    func fetchData<T: Decodable>(from api: String, completion: @escaping (Result<T, NetworkError>) -> Void)
+    func fetchData<T: Decodable>(from api: String) async throws -> Results<T>
 }
+
+import Foundation
 
 enum NetworkError: Error {
     case serverError
     case decodingError
+    case invalidURL
 }
 
-class NetworkManager {
-    func fetchData<T: Decodable>(from api: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        if let url = URL(string: api) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                DispatchQueue.main.async {
-                    guard let data = data, error == nil else {
-                        completion(.failure(.serverError))
-                        return
-                    }
-                    do {
-                        let decoder = JSONDecoder()
-                        let decodedData = try decoder.decode(T.self, from: data)
-                       
-                        completion(.success(decodedData))
-                    } catch {
-                        completion(.failure(.decodingError))
-                    }
-                }
-            }
-            task.resume()
+class NetworkManager: DataManagable {
+    func fetchData<T: Decodable>(from api: String) async throws -> Results<T> {
+        guard let url = URL(string: api) else {
+            throw NetworkError.invalidURL
+        }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+
+        do {
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(Results<T>.self, from: data)
+            return decodedData
+        } catch {
+            throw NetworkError.decodingError
         }
     }
 }
-
-

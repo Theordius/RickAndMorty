@@ -22,7 +22,8 @@ struct CustomNavigationBarHeader: View {
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
-                
+
+
         } //: HSTACK
     }
 }

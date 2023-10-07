@@ -19,19 +19,16 @@ struct AppView: View {
                         Image(systemName:"house.fill")
                         Text(String(localized: "About"))
                     }
-                
                 EpisodesView()
                     .tabItem {
                         Image(systemName:"list.star")
                         Text(String(localized: "Episodes"))
                     }
-                
                 AliveCharactersView()
                     .tabItem {
                         Image(systemName:"heart.fill")
                         Text(String(localized: "Alive"))
                     }
-                
                 DeadCharactersView()
                     .tabItem {
                         Image(systemName:"heart.slash.fill")

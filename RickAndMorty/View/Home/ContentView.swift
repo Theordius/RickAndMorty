@@ -18,7 +18,7 @@ struct ContentView: View {
                 CustomAdaptiveBackground()
                 VStack(alignment: .center, spacing: 8) {
                     Spacer()
-                    ImageLoader(url: SampleData.randomImage)
+                    ImageLoader(url: Character.randomImage)
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                         .shadow(color: Color.customBlackTransparentDark, radius: 12, x: 0, y: 0)

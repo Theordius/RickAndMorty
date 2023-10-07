@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct EpisodesView: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = EpisodesViewModel()
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                if viewModel.episodesLoadingState == .loading {
+                if viewModel.loadingState == .loading {
                     CustomLoader()
                 } else {
                     VStack(spacing: 0) {
@@ -32,11 +32,13 @@ struct EpisodesView: View {
         }
         .accentColor(.yellow)
         .onAppear {
-            // Data loading was delayed for testing purposes
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                viewModel.fetchEpisodes()
+            Task {
+                // Delay of 1 second to simulate loading (if you want to)
+                try await Task.sleep(nanoseconds: NSEC_PER_SEC)
+                await viewModel.fetchEpisodes()
             }
         }
+
     }
 }
 

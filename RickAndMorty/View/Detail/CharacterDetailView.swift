@@ -21,7 +21,7 @@ struct CharacterDetailView: View {
             
             Text("")
             
-            ImageLoader(url: character.image ?? SampleData.randomImage)
+            ImageLoader(url: character.image ?? Character.randomImage)
                 .scaledToFit()
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)
@@ -51,6 +51,6 @@ struct CharacterDetailView: View {
 //MARK: - PREVIEW
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailView(character: SampleData.characterExample)
+        CharacterDetailView(character: Character.characterExample)
     }
 }

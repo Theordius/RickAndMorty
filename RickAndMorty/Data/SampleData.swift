@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SampleData {
+extension Episode {
     static let episodeExample = Episode(
         id: 1,
         name: "Pilot",
@@ -16,11 +16,13 @@ struct SampleData {
         characters: [
             URL(string: "https://rickandmortyapi.com/api/character/1")!,
             URL(string: "https://rickandmortyapi.com/api/character/2")!,
-           
+            
         ],
         url: URL(string: "https://rickandmortyapi.com/api/episode/1")!
     )
+}
 
+extension Character{
     static let characterExample = Character(
         id: 1,
         name: "Rick Sanchez",
@@ -31,4 +33,3 @@ struct SampleData {
     
     static let randomImage = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(Int.random(in: 1...10)).jpeg")
 }
-

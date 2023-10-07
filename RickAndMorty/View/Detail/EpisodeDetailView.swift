@@ -54,7 +54,7 @@ struct EpisodeDetailView: View {
 //MARK: - PREVIEW
 struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeDetailView(episode: SampleData.episodeExample)
+        EpisodeDetailView(episode: Episode.episodeExample)
     }
 }
 

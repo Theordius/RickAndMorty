@@ -26,6 +26,7 @@ struct EpisodeListRow: View {
                 .font(.subheadline)
                 .fontWeight(.heavy)
                 .foregroundColor(.black)
+            Spacer()
         } //: VSTACK
     } //: HSTACK
 }
@@ -33,7 +34,8 @@ struct EpisodeListRow: View {
 //MARK: - PREVIEW
 struct EpisodeListRow_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeListRow(episodes: SampleData.episodeExample)
+        EpisodeListRow(episodes: Episode.episodeExample)
             .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

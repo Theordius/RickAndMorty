@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterCardView: View {
     //MARK: - PROPERTIES
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = CharactersViewModel()
     let character: Character
     let haptics = UIImpactFeedbackGenerator(style: .medium)
     let description = String(localized: "Brief character description if it was provided by API")
@@ -70,8 +70,13 @@ struct CharacterCardView: View {
         } //: CARD
         .frame(idealWidth: 320, maxWidth: 320, idealHeight: 520, maxHeight: 520)
         .onAppear {
-            viewModel.fetchCharacters()
+            Task {
+                // Delay of 1 second to simulate loading (if you want to)
+                try await Task.sleep(nanoseconds: NSEC_PER_SEC)
+                await viewModel.fetchCharacters()
+            }
         }
+        
         
     }
 }
@@ -79,6 +84,6 @@ struct CharacterCardView: View {
 //MARK: - PREVIEW
 struct CharacterCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCardView(character: SampleData.characterExample)
+        CharacterCardView(character: Character.characterExample)
     }
 }

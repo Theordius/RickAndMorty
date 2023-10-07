@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterStatusBar: View {
     //MARK: - PROPERTIES
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = CharactersViewModel()
     let character: Character
     
     //MARK: - BODY
@@ -42,7 +42,7 @@ private func circleColor(for status: String) -> Color {
 //MARK: - PREVIEW
 struct CharacterStatusBar_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterStatusBar(character: SampleData.characterExample)
+        CharacterStatusBar(character: Character.characterExample)
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }
