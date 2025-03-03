@@ -37,7 +37,7 @@ struct AliveCharactersView: View {
                                     .padding(.vertical)
                                     .padding(.horizontal, 25)
                             }
-                            Spacer()
+                        
                         }
                         .tabViewStyle(PageTabViewStyle())
                     default:

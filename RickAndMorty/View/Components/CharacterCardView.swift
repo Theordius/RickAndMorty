@@ -34,17 +34,17 @@ struct CharacterCardView: View {
                 
                 //MARK: - MAIN CONTENT
                 if let characterImageURL = character.image {
-                    
                     ZStack {
                         Circle()
                             .fill(
-                                LinearGradient(colors: [
+                                LinearGradient(
+                                    colors: [
                                     Color.customIndigoMedium,
                                     Color.customSalmonLight
                                 ],
-                                               startPoint: .topLeading,
-                                               endPoint: .bottomTrailing
-                                              )
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                                )
                             )
                             .frame(maxWidth: 180, maxHeight: 180)
                         ImageLoader(url: characterImageURL)

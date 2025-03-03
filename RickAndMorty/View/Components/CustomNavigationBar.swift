@@ -12,26 +12,26 @@ struct NavigationBarView: View {
     @State private var isAnimated: Bool = false
     @State private var isShowingSettings = false
     @State private var isShowingAlert = false
-    
+
     var title: String
-    
+
     //MARK: - BODY
     var body: some View {
         HStack {
-                   Button(action: {
-                       isShowingAlert = true 
-                   }, label: {
-                       Image(systemName: "magnifyingglass")
-                           .font(.title)
-                           .foregroundColor(.black)
-                   }) //: BUTTON
-                   .alert(isPresented: $isShowingAlert, content: {
-                       Alert(
-                           title: Text("Feature under Development"),
-                           message: nil,
-                           dismissButton: .default(Text("OK"))
-                       )
-                   })
+            Button(action: {
+                isShowingAlert = true
+            }, label: {
+                Image(systemName: "magnifyingglass")
+                    .font(.title)
+                    .foregroundColor(.black)
+            }) //: BUTTON
+            .alert(isPresented: $isShowingAlert, content: {
+                Alert(
+                    title: Text("Feature under Development"),
+                    message: nil,
+                    dismissButton: .default(Text("OK"))
+                )
+            })
             Spacer()
             CustomNavigationBarHeader(navBarTitle: title)
                 .italic()
@@ -42,9 +42,9 @@ struct NavigationBarView: View {
                         isAnimated.toggle()
                     }
                 })
-            
+
             Spacer()
-            
+
             Button(action: {
                 isShowingSettings = true
             }, label: {
@@ -55,7 +55,7 @@ struct NavigationBarView: View {
                         .sheet(isPresented: $isShowingSettings) {
                             SettingsView()
                         }
-                    
+
                     Circle()
                         .fill(Color.red)
                         .frame(width: 14, height: 14, alignment: .center)

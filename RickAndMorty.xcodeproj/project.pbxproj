@@ -51,6 +51,7 @@
 		105A99412A71672500C83A99 /* SettingsLabelViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99402A71672500C83A99 /* SettingsLabelViewl.swift */; };
 		105A99432A71682C00C83A99 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A99422A71682C00C83A99 /* SettingsRowView.swift */; };
 		105A99482A717E3F00C83A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 105A994A2A717E3F00C83A99 /* Localizable.strings */; };
+		105ACF282D75CB9B000E6425 /* PulsingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ACF272D75CB9B000E6425 /* PulsingImageView.swift */; };
 		106FB0662AD1C62600228692 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106FB0652AD1C62600228692 /* LoadingState.swift */; };
 		107EF11B2A72527B00AB761C /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107EF11A2A72527B00AB761C /* CustomLoader.swift */; };
 		107EF11D2A72551300AB761C /* CharacterStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107EF11C2A72551300AB761C /* CharacterStatusBar.swift */; };
@@ -121,6 +122,7 @@
 		105A99422A71682C00C83A99 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		105A99492A717E3F00C83A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		105A994B2A717E5000C83A99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		105ACF272D75CB9B000E6425 /* PulsingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsingImageView.swift; sourceTree = "<group>"; };
 		106FB0652AD1C62600228692 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		107EF11A2A72527B00AB761C /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
 		107EF11C2A72551300AB761C /* CharacterStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatusBar.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				105A99402A71672500C83A99 /* SettingsLabelViewl.swift */,
 				105A99422A71682C00C83A99 /* SettingsRowView.swift */,
 				107EF1262A72975D00AB761C /* CustomLaunchScreen.swift */,
+				105ACF272D75CB9B000E6425 /* PulsingImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				100D8DCE2A6EB0AA00E38839 /* HeaderTextModifier.swift in Sources */,
 				105A993F2A7166CE00C83A99 /* SettingsView.swift in Sources */,
 				100D8DB82A6E81B900E38839 /* DeadCharactersView.swift in Sources */,
+				105ACF282D75CB9B000E6425 /* PulsingImageView.swift in Sources */,
 				107EF1292A7297C100AB761C /* LaunchScreenStateManager.swift in Sources */,
 				100D8DB02A6E801700E38839 /* AppView.swift in Sources */,
 				107EF11F2A725B6600AB761C /* GradientTextModifier.swift in Sources */,

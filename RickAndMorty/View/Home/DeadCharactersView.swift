@@ -43,12 +43,13 @@ struct DeadCharactersView: View {
                                         .opacity(phase.isIdentity ? 1 : 0)
                                         .scaleEffect(phase.isIdentity ? 1 : 0.75)
                                         .blur(radius: phase.isIdentity ? 0 : 10)
+                                        
                                 }
                             }
-                          //  .scrollTargetLayout()
+                            .scrollTargetLayout()
                         }
-//                        .scrollTargetBehavior(.viewAligned)
-//                        .safeAreaPadding(.horizontal)
+                        .scrollTargetBehavior(.viewAligned)
+                        .safeAreaPadding(.horizontal)
 
                     case .error(let error):
                         Text("Error loading data: \(error.localizedDescription)")

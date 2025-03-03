@@ -24,22 +24,27 @@ struct CustomButtonView: View {
                 )
             RoundedRectangle(cornerRadius: 12)
                 .stroke(
-                    LinearGradient(colors: [
-                        .customGrayLight,
-                        .customGrayMedium],
-                       startPoint: .top,
-                       endPoint: .bottom),
-                    lineWidth: 4)
+                    LinearGradient(
+                        colors: [
+                            .customGrayLight,
+                            .customGrayMedium],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    ),
+                    lineWidth: 4
+                )
             
             Image(systemName: "questionmark.bubble")
                 .fontWeight(.black)
                 .font(.system(size: 30))
-                .foregroundStyle(LinearGradient(
+                .foregroundStyle(
+                    LinearGradient(
                     colors: [
-                        .customGrayLight,
-                        .customGrayMedium],
-                    startPoint: .top,
-                    endPoint: .bottom)
+                        .customSalmonLight,
+                        .blue,
+                        ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing)
                 )
         } //: ZSTACK
         .frame(width: 88, height: 44)
