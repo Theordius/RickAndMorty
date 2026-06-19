@@ -8,51 +8,39 @@
 import SwiftUI
 
 struct AppView: View {
-    //MARK: - PROPERTIES
+    // MARK: - PROPERTIES
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
-    //MARK: - BODY
+
+    // MARK: - BODY
     var body: some View {
         TabView {
-            Group {
+            Tab(String(localized: "About"), systemImage: "house.fill") {
                 ContentView()
-                    .tabItem{
-                        Image(systemName:"house.fill")
-                        Text(String(localized: "About"))
-                    }
+            }
+
+            Tab(String(localized: "Episodes"), systemImage: "list.star") {
                 EpisodesView()
-                    .tabItem {
-                        Image(systemName:"list.star")
-                        Text(String(localized: "Episodes"))
-                    }
+            }
+
+            Tab(String(localized: "Alive"), systemImage: "heart.fill") {
                 AliveCharactersView()
-                    .tabItem {
-                        Image(systemName:"heart.fill")
-                        Text(String(localized: "Alive"))
-                    }
+            }
+
+            Tab(String(localized: "Dead"), systemImage: "heart.slash.fill") {
                 DeadCharactersView()
-                    .tabItem {
-                        Image(systemName:"heart.slash.fill")
-                        Text(String(localized: "Dead"))
-                    }
             }
         }
+        .tint(.yellow)
+        .background(.ultraThinMaterial)
         .task {
-            try? await Task.sleep(for: Duration.seconds(1))
-            self.launchScreenState.dismiss()
+            try? await Task.sleep(for: .seconds(1))
+            launchScreenState.dismiss()
         }
-        .accentColor(Color.black)
-        .onAppear {
-                UITabBar.appearance().backgroundColor = UIColor.systemBackground
-                UITabBar.appearance().isTranslucent = true
-           
-            }
     }
 }
 
-//MARK: - PREVIEW
-struct AppView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppView()
-            .environmentObject(LaunchScreenStateManager())
-    }
+// MARK: - PREVIEW
+#Preview {
+    AppView()
+        .environmentObject(LaunchScreenStateManager())
 }
