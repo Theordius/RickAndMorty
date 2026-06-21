@@ -10,9 +10,10 @@
 import SwiftUI
 
 struct AliveCharactersView: View {
-    //MARK: - PROPERTIES
-    @StateObject var viewModel = CharactersViewModel()
+    //MARK: - Properties
+    @State private var viewModel = CharactersViewModel()
 
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             ZStack {
@@ -62,6 +63,5 @@ struct AliveCharactersView: View {
 struct AliveCharactersView_Previews: PreviewProvider {
     static var previews: some View {
         AliveCharactersView()
-            .environmentObject(LaunchScreenStateManager())
     }
 }

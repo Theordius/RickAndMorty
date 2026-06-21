@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct EpisodesView: View {
-    @StateObject var viewModel = EpisodesViewModel()
+    // MARK: - Properties
+    @State private var viewModel = EpisodesViewModel()
 
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -42,11 +44,10 @@ struct EpisodesView: View {
     }
 }
 
-//MARK: - PREVIEW
+//MARK: - Preview
 struct EpisodesView_Previews: PreviewProvider {
     static var previews: some View {
         EpisodesView()
-            .environmentObject(LaunchScreenStateManager())
     }
 }
 

@@ -4,28 +4,35 @@
 //
 //  Created by Rafał Gęsior on 25/07/2023.
 //
-/// I'am fully aware that the application takes data only from the first page of the API, didn't have enough time to figure it out in better way
-
+/// The application currently loads only the first page of the API.
 
 import Foundation
+import Observation
 
-@MainActor class EpisodesViewModel: ObservableObject {
-    @Published private(set) var episodes = [Episode]()
-    @Published var loadingState: LoadingState = .loading
+@MainActor
+@Observable
+final class EpisodesViewModel {
+    // MARK: - Properties
+    private(set) var episodes = [Episode]()
+    var loadingState: LoadingState = .loading
+    private let networkManager: DataManagable
 
-    private let networkManager = NetworkManager()
+    // MARK: - Init
+    init(networkManager: DataManagable = NetworkManager()) {
+        self.networkManager = networkManager
+    }
 
+    // MARK: - Functions
     func fetchEpisodes() async {
         let api = "https://rickandmortyapi.com/api/episode"
         loadingState = .loading
         do {
             let results: Results<Episode> = try await networkManager.fetchData(from: api)
-            self.episodes = results.results
-            self.loadingState = .loaded
+            episodes = results.results
+            loadingState = .loaded
         } catch {
             print("Error fetching episodes: \(error)")
-            self.loadingState = .error(.decodingError)
+            loadingState = .error(.decodingError)
         }
     }
-
 }

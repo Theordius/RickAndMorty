@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AppView: View {
-    // MARK: - PROPERTIES
-    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+    // MARK: - Properties
+    @Environment(LaunchScreenStateManager.self) private var launchScreenState
 
     // MARK: - BODY
     var body: some View {
@@ -39,8 +39,8 @@ struct AppView: View {
     }
 }
 
-// MARK: - PREVIEW
+// MARK: - Preview
 #Preview {
     AppView()
-        .environmentObject(LaunchScreenStateManager())
+        .environment(LaunchScreenStateManager())
 }

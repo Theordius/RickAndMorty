@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CustomLaunchScreen: View {
-    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+    // MARK: - Properties
+    @Environment(LaunchScreenStateManager.self) private var launchScreenState
     @State private var firstAnimation = false
     @State private var secondAnimation = false
     @State private var startFadeoutAnimation = false
@@ -39,6 +40,8 @@ struct CustomLaunchScreen: View {
         .publish(every: 0.5, on: .current, in: .common)
         .autoconnect()
     
+
+    // MARK: - Body
     var body: some View {
         ZStack {
             backgroundColor
@@ -67,9 +70,10 @@ struct CustomLaunchScreen: View {
     }
 }
 
+// MARK: - Preview
 struct CustomLaunchScreen_Previews: PreviewProvider {
     static var previews: some View {
         CustomLaunchScreen()
-            .environmentObject(LaunchScreenStateManager())
+            .environment(LaunchScreenStateManager())
     }
 }

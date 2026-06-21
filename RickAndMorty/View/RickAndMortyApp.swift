@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct RickAndMortyApp: App {
-    @StateObject var launchScreenState = LaunchScreenStateManager()
-    
+    // MARK: - Properties
+    @State private var launchScreenState = LaunchScreenStateManager()
+
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -19,7 +21,7 @@ struct RickAndMortyApp: App {
                     CustomLaunchScreen()
                 }
             }
-            .environmentObject(launchScreenState)
+            .environment(launchScreenState)
         }
     }
 }

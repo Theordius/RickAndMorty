@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CharacterStatusBar: View {
-    //MARK: - PROPERTIES
-    @StateObject var viewModel = CharactersViewModel()
+    //MARK: - Properties
     let character: Character
     
     //MARK: - BODY
     var body: some View {
         HStack {
-          Spacer()
+            Spacer()
             Text(String(localized: "status :").uppercased())
                 .modifier(GradientTextModifier())
                 .modifier(HeaderTextModifier())
@@ -28,16 +27,16 @@ struct CharacterStatusBar: View {
 
 private func circleColor(for status: String) -> Color {
     switch status {
-       case "Alive":
-           return .green
-       case "Dead":
-           return .red
-       case "unknown":
-           return .yellow
-       default:
-           return .white
-       }
-   }
+    case "Alive":
+        return .green
+    case "Dead":
+        return .red
+    case "unknown":
+        return .yellow
+    default:
+        return .white
+    }
+}
 
 //MARK: - PREVIEW
 struct CharacterStatusBar_Previews: PreviewProvider {

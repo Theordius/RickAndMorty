@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CharacterCardView: View {
-    //MARK: - PROPERTIES
-    @StateObject var viewModel = CharactersViewModel()
+    //MARK: - Properties
     let character: Character
     let haptics = UIImpactFeedbackGenerator(style: .medium)
     let description = String(localized: "Brief character description if it was provided by API")
-    
-    //MARK: - BODY
+
+    //MARK: - Body
     var body: some View {
         //MARK: - CARD
         ZStack {
@@ -31,7 +30,7 @@ struct CharacterCardView: View {
                         .foregroundColor(.customGrayMedium)
                 } //: HEADER
                 .padding(.horizontal, 8)
-                
+
                 //MARK: - MAIN CONTENT
                 if let characterImageURL = character.image {
                     ZStack {
@@ -47,6 +46,7 @@ struct CharacterCardView: View {
                                 )
                             )
                             .frame(maxWidth: 180, maxHeight: 180)
+
                         ImageLoader(url: characterImageURL)
                             .scaledToFit()
                             .clipShape(Circle())
@@ -57,7 +57,7 @@ struct CharacterCardView: View {
                         CharacterStatusBar(character: character)
                         Button {
                             haptics.impactOccurred()
-                            
+
                         } label: {
                             NavigationLink(destination: CharacterDetailView(character: character)) {
                                 CustomButtonView()
@@ -69,19 +69,10 @@ struct CharacterCardView: View {
             }
         } //: CARD
         .frame(idealWidth: 320, maxWidth: 320, idealHeight: 520, maxHeight: 520)
-        .onAppear {
-            Task {
-                // Delay of 1 second to simulate loading (if you want to)
-                try await Task.sleep(nanoseconds: NSEC_PER_SEC)
-                await viewModel.fetchCharacters()
-            }
-        }
-        
-        
     }
 }
 
-//MARK: - PREVIEW
+//MARK: - Preview
 struct CharacterCardView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterCardView(character: Character.characterExample)

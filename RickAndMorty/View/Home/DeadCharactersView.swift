@@ -10,9 +10,10 @@
 import SwiftUI
 
 struct DeadCharactersView: View {
-    //MARK: - PROPERTIES
-    @StateObject var viewModel = CharactersViewModel()
+    //MARK: - Properties
+    @State private var viewModel = CharactersViewModel()
 
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             ZStack {
@@ -20,6 +21,7 @@ struct DeadCharactersView: View {
                 VStack {
                     NavigationBarView(title: String(localized: "Dead Characters"))
                         .modifier(NavigationBarStyleModifier())
+
                     Spacer()
 
                     switch viewModel.loadingState {
@@ -69,10 +71,9 @@ struct DeadCharactersView: View {
     }
 }
 
-//MARK: - PREVIEW
+//MARK: - Preview
 struct DeadCharactersView_Previews: PreviewProvider {
     static var previews: some View {
         DeadCharactersView()
-            .environmentObject(LaunchScreenStateManager())
     }
 }
