@@ -25,17 +25,14 @@ struct EpisodeListRow: View {
             Text(episodes.name)
                 .font(.subheadline)
                 .fontWeight(.heavy)
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
             Spacer()
         } //: VSTACK
     } //: HSTACK
 }
 
 //MARK: - PREVIEW
-struct EpisodeListRow_Previews: PreviewProvider {
-    static var previews: some View {
-        EpisodeListRow(episodes: Episode.episodeExample)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
+#Preview {
+    EpisodeListRow(episodes: Episode.episodeExample)
+        .padding()
 }

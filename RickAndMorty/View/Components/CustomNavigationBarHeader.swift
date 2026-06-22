@@ -17,11 +17,11 @@ struct CustomNavigationBarHeader: View {
             Text(String(localized: "Rick & Morty").uppercased())
                 .font(.title3)
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
             Text(navBarTitle.uppercased())
                 .font(.title3)
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
 
 
         } //: HSTACK
@@ -29,10 +29,7 @@ struct CustomNavigationBarHeader: View {
 }
 
 //MARK: - PREVIEW
-struct LogoView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomNavigationBarHeader(navBarTitle: "Episodes")
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
+#Preview {
+    CustomNavigationBarHeader(navBarTitle: "Episodes")
+        .padding()
 }

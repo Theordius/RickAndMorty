@@ -19,7 +19,7 @@ struct CharacterStatusBar: View {
                 .modifier(GradientTextModifier())
                 .modifier(HeaderTextModifier())
             Image(systemName: "circle.fill")
-                .foregroundColor(circleColor(for: character.status))
+                .foregroundStyle(circleColor(for: character.status))
             Spacer()
         }
     }
@@ -39,10 +39,7 @@ private func circleColor(for status: String) -> Color {
 }
 
 //MARK: - PREVIEW
-struct CharacterStatusBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterStatusBar(character: Character.characterExample)
-            .previewLayout(.sizeThatFits)
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+    CharacterStatusBar(character: Character.characterExample)
+        .preferredColorScheme(.dark)
 }

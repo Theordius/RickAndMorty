@@ -32,11 +32,11 @@ struct EpisodesView: View {
                 }
             }
         }
-        .accentColor(.yellow)
+        .tint(.yellow)
         .onAppear {
             Task {
                 // Delay of 1 second to simulate loading (if you want to)
-                try await Task.sleep(nanoseconds: NSEC_PER_SEC)
+                try await Task.sleep(for: .seconds(1))
                 await viewModel.fetchEpisodes()
             }
         }
@@ -45,10 +45,8 @@ struct EpisodesView: View {
 }
 
 //MARK: - Preview
-struct EpisodesView_Previews: PreviewProvider {
-    static var previews: some View {
-        EpisodesView()
-    }
+#Preview {
+    EpisodesView()
 }
 
 

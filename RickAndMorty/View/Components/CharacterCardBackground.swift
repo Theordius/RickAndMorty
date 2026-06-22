@@ -12,12 +12,12 @@ struct CharacterCardBackground: View {
             ZStack {
                 // MARK: - 3. DEPTH
                 Color.customGreenDark
-                    .cornerRadius(40)
+                    .clipShape(.rect(cornerRadius: 40))
                     .offset(y: 12)
                 
                 // MARK: - 2. LIGHT
                 Color.customGreenLight
-                    .cornerRadius(40)
+                    .clipShape(.rect(cornerRadius: 40))
                     .offset(y: 3)
                     .opacity(0.85)
                 
@@ -28,14 +28,12 @@ struct CharacterCardBackground: View {
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                .cornerRadius(40)
+                .clipShape(.rect(cornerRadius: 40))
             }
     }
 }
 
 //MARK: - PREVIEW
-struct CharacterCardBackground_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterCardBackground()
-    }
+#Preview {
+    CharacterCardBackground()
 }

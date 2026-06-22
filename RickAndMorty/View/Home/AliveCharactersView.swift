@@ -40,7 +40,7 @@ struct AliveCharactersView: View {
                             }
                         
                         }
-                        .tabViewStyle(PageTabViewStyle())
+                        .tabViewStyle(.page)
                     default:
                         Text("An error occurred.")
                     }
@@ -48,11 +48,11 @@ struct AliveCharactersView: View {
             }
             .ignoresSafeArea(.all, edges: .top)
         }
-        .accentColor(.yellow)
+        .tint(.yellow)
         .onAppear {
             Task {
                 // Delay of 1 second to simulate loading
-                try await Task.sleep(nanoseconds: 1_000_000_000)
+                try await Task.sleep(for: .seconds(1))
                 await viewModel.fetchCharacters()
             }
         }
@@ -60,8 +60,6 @@ struct AliveCharactersView: View {
 }
 
 //MARK: - PREVIEW
-struct AliveCharactersView_Previews: PreviewProvider {
-    static var previews: some View {
-        AliveCharactersView()
-    }
+#Preview {
+    AliveCharactersView()
 }

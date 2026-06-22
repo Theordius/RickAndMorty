@@ -22,7 +22,7 @@ struct CustomLoader: View {
                                             Color.customGreenMedium, Color.customGreenDark], startPoint: .top, endPoint: .bottom)
                 )
                 .frame(width: 240, height: 240)
-                .cornerRadius(8).opacity(0.3)
+                .clipShape(.rect(cornerRadius: 8)).opacity(0.3)
             
             VStack(alignment: .center) {
                 Image("rick")
@@ -37,13 +37,10 @@ struct CustomLoader: View {
                         }
                     }
             }
-            .accentColor(.blue)
+            .tint(.blue)
         }
     }
 }
-struct CustomLoader_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomLoader()
-            .previewLayout(.sizeThatFits)
-    }
+#Preview {
+    CustomLoader()
 }

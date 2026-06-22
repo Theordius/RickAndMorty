@@ -23,7 +23,7 @@ struct NavigationBarView: View {
             }, label: {
                 Image(systemName: "magnifyingglass")
                     .font(.title)
-                    .foregroundColor(.black)
+                    .foregroundStyle(.black)
             }) //: BUTTON
             .alert(isPresented: $isShowingAlert, content: {
                 Alert(
@@ -51,7 +51,7 @@ struct NavigationBarView: View {
                 ZStack {
                     Image(systemName: "questionmark.circle")
                         .font(.title)
-                        .foregroundColor(.black)
+                        .foregroundStyle(.black)
                         .sheet(isPresented: $isShowingSettings) {
                             SettingsView()
                         }
@@ -67,10 +67,7 @@ struct NavigationBarView: View {
 }
 
 //MARK: - PREVIEW
-struct NavigationBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBarView(title: "Episodes")
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
+#Preview {
+    NavigationBarView(title: "Episodes")
+        .padding()
 }

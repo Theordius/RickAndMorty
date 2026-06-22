@@ -27,7 +27,7 @@ struct CharacterCardView: View {
                     Divider().padding(.horizontal, 4)
                     Text(description)
                         .modifier(DescriptionTextModifier())
-                        .foregroundColor(.customGrayMedium)
+                        .foregroundStyle(Color.customGrayMedium)
                 } //: HEADER
                 .padding(.horizontal, 8)
 
@@ -73,8 +73,6 @@ struct CharacterCardView: View {
 }
 
 //MARK: - Preview
-struct CharacterCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterCardView(character: Character.characterExample)
-    }
+#Preview {
+    CharacterCardView(character: Character.characterExample)
 }

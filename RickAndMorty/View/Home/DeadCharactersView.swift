@@ -33,7 +33,7 @@ struct DeadCharactersView: View {
                             }
                         }
                     case .loaded:
-                        ScrollView(.horizontal, showsIndicators: false) {
+                        ScrollView(.horizontal) {
                             LazyHStack {
                                 ForEach(viewModel.deadCharacters) { character in
                                     CharacterCardView(character: character)
@@ -51,6 +51,7 @@ struct DeadCharactersView: View {
                             .scrollTargetLayout()
                         }
                         .scrollTargetBehavior(.viewAligned)
+                        .scrollIndicators(.hidden)
                         .safeAreaPadding(.horizontal)
 
                     case .error(let error):
@@ -60,11 +61,11 @@ struct DeadCharactersView: View {
             }
             .ignoresSafeArea(.all, edges: .top)
         }
-        .accentColor(.yellow)
+        .tint(.yellow)
         .onAppear {
             Task {
                 // Delay of 1 second to simulate loading (if you want to)
-                try await Task.sleep(nanoseconds: NSEC_PER_SEC)
+                try await Task.sleep(for: .seconds(1))
                 await viewModel.fetchCharacters()
             }
         }
@@ -72,8 +73,6 @@ struct DeadCharactersView: View {
 }
 
 //MARK: - Preview
-struct DeadCharactersView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeadCharactersView()
-    }
+#Preview {
+    DeadCharactersView()
 }

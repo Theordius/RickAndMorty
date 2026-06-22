@@ -52,10 +52,7 @@ struct CustomButtonView: View {
 }
 
 //MARK: - PREVIEW
-struct CustomButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomButtonView()
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
+#Preview {
+    CustomButtonView()
+        .padding()
 }

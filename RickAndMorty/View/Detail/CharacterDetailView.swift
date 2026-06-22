@@ -33,7 +33,7 @@ struct CharacterDetailView: View {
               
             }
             .modifier(HeadlineTextModifier())
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             
             
             Spacer()
@@ -49,8 +49,6 @@ struct CharacterDetailView: View {
 }
 
 //MARK: - PREVIEW
-struct CharacterDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailView(character: Character.characterExample)
-    }
+#Preview {
+    CharacterDetailView(character: Character.characterExample)
 }

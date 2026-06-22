@@ -31,11 +31,8 @@ struct CreditsView: View {
 }
 
 //MARK: - PREVIEW
-struct CreditsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreditsView()
-            .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
+#Preview {
+    CreditsView()
+        .preferredColorScheme(.dark)
+        .padding()
 }

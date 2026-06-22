@@ -13,6 +13,6 @@ struct HeaderTextModifier: ViewModifier {
             .fontWeight(.black)
             .multilineTextAlignment(.center)
             .font(.system(size: 24))
-            .foregroundColor(Color.white)
+            .foregroundStyle(Color.white)
     }
 }

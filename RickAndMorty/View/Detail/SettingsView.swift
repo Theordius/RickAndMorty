@@ -31,7 +31,7 @@ struct SettingsView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 80, height: 80)
-                                    .cornerRadius(9)
+                                    .clipShape(.rect(cornerRadius: 9))
                                 
                                 Text("This application was build for recruitment purposes entirely in SwiftUI without usage of 3rd party libraries.")
                                     .italic()
@@ -76,10 +76,7 @@ struct SettingsView: View {
 }
 
 //MARK: - PREVIEW
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-            .preferredColorScheme(.dark)
-            .previewDevice("iPhone 11 Pro")
-    }
+#Preview {
+    SettingsView()
+        .preferredColorScheme(.dark)
 }

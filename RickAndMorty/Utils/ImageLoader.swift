@@ -20,7 +20,7 @@ struct ImageLoader: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .cornerRadius(12)
+                    .clipShape(.rect(cornerRadius: 12))
             case .failure(_):
                 Image(systemName: "xmark.square.fill")
             @unknown default:

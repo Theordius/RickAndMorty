@@ -33,10 +33,8 @@ struct CustomAdaptiveBackground: View {
 }
 
 //MARK: - PREVIEW
-struct CustomAdaptiveBackground_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomAdaptiveBackground()
-    }
+#Preview {
+    CustomAdaptiveBackground()
 }
 
 

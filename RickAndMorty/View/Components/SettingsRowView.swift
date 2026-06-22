@@ -21,13 +21,13 @@ struct SettingsRowView: View {
       VStack {
         Divider().padding(.vertical, 4)
         HStack {
-          Text(name).foregroundColor(Color.gray)
+          Text(name).foregroundStyle(Color.gray)
           Spacer()
           if (content != nil) {
             Text(content ?? "Error")
           } else if (linkLabel != nil && linkDestination != nil) {
             Link(linkLabel ?? "Link was not provided", destination: URL(string: "https://\(linkDestination!)")!)
-            Image(systemName: "arrow.up.right.square").foregroundColor(.yellow)
+            Image(systemName: "arrow.up.right.square").foregroundStyle(.yellow)
           }
           else {
             EmptyView()

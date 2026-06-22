@@ -71,8 +71,6 @@ struct CharacterDetailGrid: View {
 }
 
 //MARK: - PREVIEW
-struct CharacterDetailGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailGrid(status: "Test", gender: "Male", species: "Human")
-    }
+#Preview {
+    CharacterDetailGrid(status: "Test", gender: "Male", species: "Human")
 }

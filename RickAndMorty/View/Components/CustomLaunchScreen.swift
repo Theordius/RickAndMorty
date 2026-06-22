@@ -20,7 +20,7 @@ struct CustomLaunchScreen: View {
             .resizable()
             .scaledToFit()
             .frame(width: 240, height: 240)
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             .rotationEffect(firstAnimation ? Angle(degrees: 900) : Angle(degrees: 1800))
             .scaleEffect(secondAnimation ? 0 : 1)
             .offset(y: secondAnimation ? 400 : 0)
@@ -71,9 +71,7 @@ struct CustomLaunchScreen: View {
 }
 
 // MARK: - Preview
-struct CustomLaunchScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomLaunchScreen()
-            .environment(LaunchScreenStateManager())
-    }
+#Preview {
+    CustomLaunchScreen()
+        .environment(LaunchScreenStateManager())
 }

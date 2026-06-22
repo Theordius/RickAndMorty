@@ -35,7 +35,7 @@ struct ContentView: View {
                             Welcome to the Rick & Morty App, created for all of you who wants to know more about this awesome series!
                             """))
                     .modifier(HeadlineTextModifier())
-                    .foregroundColor(Color.customGreenLight)
+                    .foregroundStyle(Color.customGreenLight)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
 
@@ -50,8 +50,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

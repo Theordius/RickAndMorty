@@ -24,7 +24,7 @@ struct EpisodeDetailView: View {
                 Image(systemName: "questionmark.app")
                    .font(Font.title.weight(.bold))
                     .font(.system(.caption2))
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .imageScale(.large)
                 
                 Text(episode.name.uppercased())
@@ -32,7 +32,7 @@ struct EpisodeDetailView: View {
                 
                 Text(summary)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                 
                 VStack(alignment: .center, spacing: 8) {
                     Text("Air Date: \(episode.airDate)")
@@ -41,7 +41,7 @@ struct EpisodeDetailView: View {
                    
                 }
                 .modifier(HeadlineTextModifier())
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 
                 
                 Spacer()
@@ -52,9 +52,7 @@ struct EpisodeDetailView: View {
 }
 
 //MARK: - PREVIEW
-struct EpisodeDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        EpisodeDetailView(episode: Episode.episodeExample)
-    }
+#Preview {
+    EpisodeDetailView(episode: Episode.episodeExample)
 }
 
