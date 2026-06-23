@@ -1,5 +1,5 @@
 //
-//  LoadinState.swift
+//  LoadingState.swift
 //  RickAndMorty
 //
 //  Created by Rafał Gęsior on 07/10/2023.

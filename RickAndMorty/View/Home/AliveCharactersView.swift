@@ -5,7 +5,7 @@
 //  Created by Rafał Gęsior on 24/07/2023.
 //
 
-/// View was created using TabView for showign purposes
+/// View was created using a paged TabView for showing purposes
 
 import SwiftUI
 
@@ -25,12 +25,8 @@ struct AliveCharactersView: View {
 
                     switch viewModel.loadingState {
                     case .loading:
-                        GeometryReader { geometry in
-                            ZStack {
-                                CustomLoader()
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                            }
-                        }
+                        CustomLoader()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     case .loaded:
                         TabView {
                             ForEach(viewModel.aliveCharacters) { character in

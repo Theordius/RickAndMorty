@@ -10,41 +10,34 @@ import SwiftUI
 struct CharacterDetailView: View {
     //MARK: - PROPERTIES
     var character: Character
-    let screenSize = UIScreen.main.bounds.size
-    
+
     //MARK: - BODY
     var body: some View {
-        VStack(alignment: .center, spacing: 16) {
-            Spacer()
-            Text(character.name.uppercased())
-                .modifier(BoldTextModifier())
-            
-            Text("")
-            
-            ImageLoader(url: character.image ?? Character.randomImage)
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 200, height: 200)
-          
-            VStack(alignment: .center, spacing: 8) {
-                CharacterDetailGrid(status: character.status,
-                                    gender: character.gender,
-                                    species: character.species)
-              
+        ZStack {
+            CustomAdaptiveBackground()
+            VStack(alignment: .center, spacing: 16) {
+                Spacer()
+                Text(character.name.uppercased())
+                    .modifier(BoldTextModifier())
+
+                Text("")
+
+                ImageLoader(url: character.image ?? Character.randomImage)
+                    .scaledToFit()
+                    .clipShape(.circle)
+                    .frame(width: 200, height: 200)
+
+                VStack(alignment: .center, spacing: 8) {
+                    CharacterDetailGrid(status: character.status,
+                                        gender: character.gender,
+                                        species: character.species)
+                }
+                .modifier(HeadlineTextModifier())
+                .foregroundStyle(.white)
+
+                Spacer()
             }
-            .modifier(HeadlineTextModifier())
-            .foregroundStyle(.white)
-            
-            
-            Spacer()
         }
-        .background(
-            Image("background")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: screenSize.width, height: screenSize.height)
-        )
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

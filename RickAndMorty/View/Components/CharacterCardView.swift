@@ -10,8 +10,8 @@ import SwiftUI
 struct CharacterCardView: View {
     //MARK: - Properties
     let character: Character
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
     let description = String(localized: "Brief character description if it was provided by API")
+    @State private var detailTapCount = 0
 
     //MARK: - Body
     var body: some View {
@@ -49,20 +49,20 @@ struct CharacterCardView: View {
 
                         ImageLoader(url: characterImageURL)
                             .scaledToFit()
-                            .clipShape(Circle())
+                            .clipShape(.circle)
                             .frame(maxWidth: 170, maxHeight: 170)
                     }
                     Divider().padding(.horizontal,4)
                     VStack {
                         CharacterStatusBar(character: character)
-                        Button {
-                            haptics.impactOccurred()
-
+                        NavigationLink {
+                            CharacterDetailView(character: character)
                         } label: {
-                            NavigationLink(destination: CharacterDetailView(character: character)) {
-                                CustomButtonView()
-                            }
+                            CustomButtonView()
                         }
+                        .buttonStyle(.plain)
+                        .simultaneousGesture(TapGesture().onEnded { detailTapCount += 1 })
+                        .sensoryFeedback(.impact, trigger: detailTapCount)
                     }
                     .padding()
                 }

@@ -26,12 +26,8 @@ struct DeadCharactersView: View {
 
                     switch viewModel.loadingState {
                     case .loading:
-                        GeometryReader { geometry in
-                            ZStack {
-                                CustomLoader()
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                            }
-                        }
+                        CustomLoader()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     case .loaded:
                         ScrollView(.horizontal) {
                             LazyHStack {

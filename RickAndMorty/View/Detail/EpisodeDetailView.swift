@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct EpisodeDetailView: View {
     //MARK: - PROPERTIES
     var episode: Episode
-    let screenSize = UIScreen.main.bounds.size
     let summary: String = String(localized: "Some kind of summary of the episode if provided by API")
     
     //MARK: - BODY

@@ -33,15 +33,15 @@ struct SettingsView: View {
                                     .frame(width: 80, height: 80)
                                     .clipShape(.rect(cornerRadius: 9))
                                 
-                                Text("This application was build for recruitment purposes entirely in SwiftUI without usage of 3rd party libraries.")
+                                Text("This application was built for recruitment purposes entirely in SwiftUI without usage of 3rd party libraries.")
                                     .italic()
                                     .font(.footnote)
                                  
                             }
                                 .padding()
                                 .background(
-                                    Color(UIColor.tertiarySystemBackground)
-                                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                                    Color(.tertiarySystemBackground)
+                                        .clipShape(.rect(cornerRadius: 8, style: .continuous))
                                 )
                         }
                         
@@ -50,7 +50,7 @@ struct SettingsView: View {
                             label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")
                         ) {
                             SettingsRowView(name: "Developer", content: "Rafal Gesior")
-                            SettingsRowView(name: "Compability", content: "iOS 16")
+                            SettingsRowView(name: "Compatibility", content: "iOS 26")
                             SettingsRowView(name: "Website", linkLabel: "Sii Poland", linkDestination: "www.sii.pl/en/")
                             SettingsRowView(name: "SwiftUI", content: "4.0")
                             SettingsRowView(name: "App Version", content: "1.0")
