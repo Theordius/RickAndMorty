@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character: Hashable, Identifiable, Codable{
+nonisolated struct Character: Hashable, Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name

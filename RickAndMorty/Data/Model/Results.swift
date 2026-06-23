@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Results<T: Decodable>: Decodable {
+nonisolated struct Results<T: Decodable>: Decodable {
     let results: [T]
 }

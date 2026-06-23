@@ -8,6 +8,7 @@
 import Foundation
 @testable import RickAndMorty
 
+@MainActor
 final class MockNetworkManager: DataManagable {
     var character: Character?
     var error: NetworkError?

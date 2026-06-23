@@ -5,7 +5,7 @@
 //  Created by Rafał Gęsior on 24/07/2023.
 //
 
-/// View was created using a paged TabView for showing purposes
+/// Uses the same horizontal ScrollView carousel as DeadCharactersView for a consistent card-switch animation.
 
 import SwiftUI
 
@@ -28,15 +28,25 @@ struct AliveCharactersView: View {
                         CustomLoader()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     case .loaded:
-                        TabView {
-                            ForEach(viewModel.aliveCharacters) { character in
-                                CharacterCardView(character: character)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 25)
+                        ScrollView(.horizontal) {
+                            LazyHStack {
+                                ForEach(viewModel.aliveCharacters) { character in
+                                    CharacterCardView(character: character)
+                                        .padding(.vertical)
+                                        .padding(.horizontal, 25)
+                                }
+                                .scrollTransition { content, phase in
+                                    content
+                                        .opacity(phase.isIdentity ? 1 : 0)
+                                        .scaleEffect(phase.isIdentity ? 1 : 0.75)
+                                        .blur(radius: phase.isIdentity ? 0 : 10)
+                                }
                             }
-                        
+                            .scrollTargetLayout()
                         }
-                        .tabViewStyle(.page)
+                        .scrollTargetBehavior(.viewAligned)
+                        .scrollIndicators(.hidden)
+                        .safeAreaPadding(.horizontal)
                     default:
                         Text("An error occurred.")
                     }

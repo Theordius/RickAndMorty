@@ -9,68 +9,54 @@ import XCTest
 @testable import RickAndMorty
 
 final class NetworkManagerTests: XCTestCase {
-    private var vc: CharactersViewModel!
-    private var mockNetworkManager: MockNetworkManager!
-
-    @MainActor override func setUp() {
-        super.setUp()
-        mockNetworkManager = MockNetworkManager()
-        mockNetworkManager.character = Character.characterExample
-        mockNetworkManager.error = nil
-        vc = CharactersViewModel(networkManager: mockNetworkManager)
-    }
 
     @MainActor
-    func testFetchCharacter() async {
+    func testFetchCharacter() async throws {
         // Given
-        let apiURL = "https://rickandmortyapi.com/api/character/1"
+        let mockNetworkManager = MockNetworkManager()
         let mockCharacter = Character.characterExample
-
         mockNetworkManager.character = mockCharacter
-
-        let expectedName = mockCharacter.name
-        let expectedStatus = mockCharacter.status
+        let apiURL = "https://rickandmortyapi.com/api/character/1"
 
         // When
-        do {
-            let result: Results<Character> = try await mockNetworkManager.fetchData(from: apiURL)
+        let result: Results<Character> = try await mockNetworkManager.fetchData(from: apiURL)
 
-            // Then
-            guard let firstCharacter = result.results.first else {
-                XCTFail("No characters found")
-                return
-            }
-
-            XCTAssertEqual(firstCharacter.name, expectedName, "Expected name to be \(expectedName), but got \(firstCharacter.name)")
-            XCTAssertEqual(firstCharacter.status, expectedStatus, "Expected status to be \(expectedStatus), but got \(firstCharacter.status)")
-
-        } catch {
-            XCTFail("Unexpected error: \(error)")
+        // Then
+        guard let firstCharacter = result.results.first else {
+            XCTFail("No characters found")
+            return
         }
+        XCTAssertEqual(firstCharacter.name, mockCharacter.name)
+        XCTAssertEqual(firstCharacter.status, mockCharacter.status)
     }
-
 
     @MainActor
     func testFetchCharacterError() async {
-        let apiURL = "https://rickandmortyapi.com/api/character/1"
+        let mockNetworkManager = MockNetworkManager()
         mockNetworkManager.error = .serverError
+        let apiURL = "https://rickandmortyapi.com/api/character/1"
+
         do {
             let _: Results<Character> = try await mockNetworkManager.fetchData(from: apiURL)
             XCTFail("Expected serverError but got a result")
         } catch NetworkError.serverError {
-
+            // Expected
         } catch {
             XCTFail("Unexpected error: \(error)")
         }
     }
 
-
-    @MainActor func testTitleAndMessageForServerError() throws {
+    @MainActor
+    func testTitleAndMessageForServerError() throws {
+        let vc = CharactersViewModel(networkManager: MockNetworkManager())
         let titleAndMessage = vc.titleAndMessageForTesting(for: .serverError)
         XCTAssertEqual("Server Error", titleAndMessage.0)
         XCTAssertEqual("We could not process your request. Please try again.", titleAndMessage.1)
     }
-    @MainActor func testTitleAndMessageForNetworkError() throws {
+
+    @MainActor
+    func testTitleAndMessageForNetworkError() throws {
+        let vc = CharactersViewModel(networkManager: MockNetworkManager())
         let titleAndMessage = vc.titleAndMessageForTesting(for: .decodingError)
         XCTAssertEqual("Network Error", titleAndMessage.0)
         XCTAssertEqual("Ensure you are connected to the internet. Please try again.", titleAndMessage.1)
