@@ -11,7 +11,7 @@ import SwiftUI
 
 struct DeadCharactersView: View {
     //MARK: - Properties
-    @State private var viewModel = CharactersViewModel()
+    @Environment(CharactersViewModel.self) private var viewModel
 
     // MARK: - Body
     var body: some View {
@@ -58,17 +58,11 @@ struct DeadCharactersView: View {
             .ignoresSafeArea(.all, edges: .top)
         }
         .tint(.yellow)
-        .onAppear {
-            Task {
-                // Delay of 1 second to simulate loading (if you want to)
-                try await Task.sleep(for: .seconds(1))
-                await viewModel.fetchCharacters()
-            }
-        }
     }
 }
 
 //MARK: - Preview
 #Preview {
     DeadCharactersView()
+        .environment(CharactersViewModel())
 }

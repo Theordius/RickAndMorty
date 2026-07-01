@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct AppView: View {
-    // MARK: - Properties
-    @Environment(LaunchScreenStateManager.self) private var launchScreenState
-
     // MARK: - BODY
     var body: some View {
         TabView {
@@ -32,15 +29,11 @@ struct AppView: View {
         }
         .tint(.yellow)
         .background(.ultraThinMaterial)
-        .task {
-            try? await Task.sleep(for: .seconds(1))
-            launchScreenState.dismiss()
-        }
     }
 }
 
 // MARK: - Preview
 #Preview {
     AppView()
-        .environment(LaunchScreenStateManager())
+        .environment(CharactersViewModel())
 }

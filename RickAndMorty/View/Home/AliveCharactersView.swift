@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AliveCharactersView: View {
     //MARK: - Properties
-    @State private var viewModel = CharactersViewModel()
+    @Environment(CharactersViewModel.self) private var viewModel
 
     // MARK: - Body
     var body: some View {
@@ -55,17 +55,11 @@ struct AliveCharactersView: View {
             .ignoresSafeArea(.all, edges: .top)
         }
         .tint(.yellow)
-        .onAppear {
-            Task {
-                // Delay of 1 second to simulate loading
-                try await Task.sleep(for: .seconds(1))
-                await viewModel.fetchCharacters()
-            }
-        }
     }
 }
 
 //MARK: - PREVIEW
 #Preview {
     AliveCharactersView()
+        .environment(CharactersViewModel())
 }
