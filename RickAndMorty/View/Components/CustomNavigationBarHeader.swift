@@ -16,11 +16,11 @@ struct CustomNavigationBarHeader: View {
         VStack(alignment: .center) {
             Text(String(localized: "Rick & Morty").uppercased())
                 .font(.title3)
-                .fontWeight(.bold)
+                .bold()
                 .foregroundStyle(.black)
             Text(navBarTitle.uppercased())
                 .font(.title3)
-                .fontWeight(.bold)
+                .bold()
                 .foregroundStyle(.black)
 
 
